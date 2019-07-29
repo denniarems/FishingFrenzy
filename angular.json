@@ -15,7 +15,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/fishHunting",
             "index": "src/index.html",
@@ -60,7 +60,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/dev-server:generic",
           "options": {
             "browserTarget": "fishHunting:build"
           },
@@ -119,6 +119,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "fishHunting"
 }
