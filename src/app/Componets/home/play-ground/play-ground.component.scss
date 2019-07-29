@@ -1,0 +1,31 @@
+.play {
+  display: flex;
+  .left {
+    width: 30vw;
+    height: 91vh;
+
+    .energy {
+      display: inline-flex;
+      justify-content: center;
+      .icon {
+        #energy {
+          color: chartreuse;
+          font-size: 75px;
+        }
+      }
+      .num {
+      }
+    }
+  }
+  .right {
+    display: flex;
+    justify-content: center;
+    width: 70vw;
+    height: 91vh;
+    .example-card {
+      margin-top: 50px;
+      max-width: 400px;
+      max-height: 500px;
+    }
+  }
+}
