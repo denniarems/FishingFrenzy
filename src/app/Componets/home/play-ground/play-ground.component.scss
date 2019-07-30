@@ -1,9 +1,15 @@
 .play {
   display: flex;
+
   .left {
     width: 30vw;
     height: 91vh;
-
+    .mat-fab{
+      margin: 50%;
+      width: 100px;
+      height: 100px;
+      
+    }
     .energy {
       display: inline-flex;
       justify-content: center;
