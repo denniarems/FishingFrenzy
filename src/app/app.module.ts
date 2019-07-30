@@ -11,6 +11,7 @@ import { PlayGroundComponent } from './Components/home/play-ground/play-ground.c
 import { StoreComponent } from './Components/home/play-ground/store/store.component';
 import { PlayComponent } from './Components/home/play-ground/play/play.component';
 import { MarketComponent } from './Components/home/play-ground/market/market.component';
+import { BackgroundAnimationComponent } from './background-animation/background-animation.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MarketComponent } from './Components/home/play-ground/market/market.com
     PlayGroundComponent,
     StoreComponent,
     PlayComponent,
-    MarketComponent
+    MarketComponent,
+    BackgroundAnimationComponent
   ],
   imports: [BrowserModule, AppRoutingModule, MaterialModule],
   providers: [],
