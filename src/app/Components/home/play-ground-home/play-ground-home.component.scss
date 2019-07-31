@@ -1,5 +1,5 @@
 .options {
-  margin: 10%;
+  margin: 5% 10% 10% 10%;
   mat-grid-tile {
     background: #adbcdf;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.027),
@@ -17,5 +17,17 @@
         transform: scale(0.9, 0.9);
       }
     }
+  }
+}
+.energy {
+  display: inline-flex;
+  justify-content: center;
+  .icon {
+    #energy {
+      color: chartreuse;
+      font-size: 75px;
+    }
+  }
+  .num {
   }
 }
