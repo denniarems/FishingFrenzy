@@ -36,7 +36,13 @@
               <p>Price : 100</p>
             </mat-grid-tile>
             <mat-grid-tile>
-              <button mat-raised-button color="primary">BUY</button>
+              <button
+                mat-raised-button
+                color="primary"
+                [routerLink]="['/store']"
+              >
+                View in Store
+              </button>
             </mat-grid-tile>
           </mat-grid-list>
         </div>
