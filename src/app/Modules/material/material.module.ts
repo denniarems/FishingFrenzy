@@ -15,7 +15,8 @@ import {
   MatProgressSpinnerModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatTabsModule} from '@angular/material/tabs'; 
+import { MatTabsModule } from '@angular/material/tabs';
+
 @NgModule({
   imports: [
     MatProgressSpinnerModule,

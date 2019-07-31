@@ -6,7 +6,7 @@ declare let require: any;
 
 const Web3 = require('web3');
 
-// const landRegistry_artifacts = require('../../build/contracts/landRegistration.json');
+// const fishingFrenzy_abi = require('../../build/contracts/');
 declare let window: any;
 @Injectable({
   providedIn: 'root'
