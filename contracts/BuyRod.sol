@@ -11,9 +11,9 @@ contract BuyRode {
         rodetype mytype;
     }
     
-    mapping(uint => property) rode;
+    mapping(address => property) rode;
     
-    function setRode(uint _roll,  uint _power, rodetype _mytype) public {
+    function buyRode(uint _roll,  uint _power, rodetype _mytype) public {
         rode[_roll] = property(_power, _mytype );
     }
     
