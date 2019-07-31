@@ -1,49 +1,60 @@
 <mat-tab-group dynamicHeight>
- <div class="market">
-        <mat-tab label="BUY ORDER">
-                <mat-card class="example-card">
-                        <mat-card-header>
-                         
-                          <mat-card-title>Shiba Inu</mat-card-title>
-                          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                        </mat-card-header>
-                        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                        <mat-card-content>
-                          <p>
-                            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                            bred for hunting.
-                          </p>
-                        </mat-card-content>
-                        <mat-card-actions>
-                          <button mat-button>BUY</button>
-                          
-                        </mat-card-actions>
-                      </mat-card>
-                      
-              </mat-tab>
-              <mat-tab label="SELL ORDER">
-                    <mat-card class="example-card">
-                            <mat-card-header>
-                             
-                              <mat-card-title>Shiba Inu</mat-card-title>
-                              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                            </mat-card-header>
-                            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                            <mat-card-content>
-                              <p>
-                                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                                bred for hunting.
-                              </p>
-                            </mat-card-content>
-                            <mat-card-actions>
-                              <button mat-button>CANCELL ORDER</button>
-                             
-                            </mat-card-actions>
-                          </mat-card>
-                          
-              </mat-tab>
-
- </div>
+  <div class="market">
+    <mat-tab label="BUY ORDER">
+      <mat-card class="example-card">
+        <mat-card-header> </mat-card-header>
+        <img
+          mat-card-image
+          src="http://wearecodex.com/steem-avatars/avatar-minnow.php?seed=denny"
+          alt="Fish"
+        />
+        <mat-card-content>
+          <div class="properties">
+            <mat-grid-list cols="1" rowHeight="30px">
+              <mat-grid-tile>
+                <p>Rarity : Epic</p>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <p>Weight : 5</p>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <p>Price : 100</p>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <button mat-raised-button color="primary">BUY</button>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+    <mat-tab label="SELL ORDER">
+      <mat-card class="example-card">
+        <mat-card-header> </mat-card-header>
+        <img
+          mat-card-image
+          src="http://wearecodex.com/steem-avatars/avatar-minnow.php?seed=denny"
+          alt="Fish"
+        />
+        <mat-card-content>
+          <div class="properties">
+            <mat-grid-list cols="1" rowHeight="30px">
+              <mat-grid-tile>
+                <p>Rarity : Epic</p>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <p>Weight : 5</p>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <p>Price : 100</p>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <button mat-raised-button color="primary">BUY</button>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+  </div>
 </mat-tab-group>

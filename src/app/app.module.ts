@@ -13,6 +13,7 @@ import { PlayComponent } from './Components/home/play-ground-home/play/play.comp
 import { MarketComponent } from './Components/home/play-ground-home/market/market.component';
 import { BackgroundAnimationComponent } from './Components/other/background-animation/background-animation.component';
 import { PlayGroundHomeComponent } from './Components/home/play-ground-home/play-ground-home.component';
+import { Web3Service } from './Services/web3/web3.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { PlayGroundHomeComponent } from './Components/home/play-ground-home/play
     PlayGroundHomeComponent
   ],
   imports: [BrowserModule, AppRoutingModule, MaterialModule],
-  providers: [],
+  providers: [Web3Service],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
