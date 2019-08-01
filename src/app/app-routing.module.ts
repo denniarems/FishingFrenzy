@@ -6,10 +6,10 @@ import { AuthGuard } from './Guards/auth.guard';
 import { HomeRouteComponent } from './Components/home/home-route/home-route.component';
 import { AboutComponent } from './Components/home/about/about.component';
 import { GameComponent } from './Components/game/game.component';
-import { GameRouteComponent } from './Components/game/game-route/game-route.component';
-import { PlayGroundComponent } from './Components/game/game-route/play-ground/play-ground.component';
-import { MarketComponent } from './Components/game/game-route/market/market.component';
-import { StoreComponent } from './Components/game/game-route/store/store.component';
+import { HarbourComponent } from './Components/game/harbour/harbour.component';
+import { PlayGroundComponent } from './Components/game/harbour/play-ground/play-ground.component';
+import { MarketComponent } from './Components/game/harbour/market/market.component';
+import { StoreComponent } from './Components/game/harbour/store/store.component';
 
 const routes: Routes = [
   {
@@ -23,7 +23,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: HomeRouteComponent
+        component: HomeRouteComponent,
+        pathMatch: 'full'
       },
       {
         path: 'About',
@@ -32,13 +33,13 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'RiverSide',
+    path: 'Harbour',
     component: GameComponent,
     canActivate: [AuthGuard],
     children: [
       {
         path: '',
-        component: GameRouteComponent
+        component: HarbourComponent
       },
       {
         path: 'Playground',

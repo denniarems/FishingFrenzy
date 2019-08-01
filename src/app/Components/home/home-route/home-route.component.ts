@@ -16,6 +16,6 @@ export class HomeRouteComponent implements OnInit {
     await this.web3service.web3login();
     console.log('Login Button Pressed');
     // this._web3Login.MetamaskLogin();
-    this.route.navigateByUrl('/home');
+    this.route.navigateByUrl('/Harbour');
   }
 }

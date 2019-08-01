@@ -9,14 +9,14 @@
     [opened]="(isHandset$ | async) === false"
   >
     <mat-toolbar>Menu </mat-toolbar>
-    <mat-nav-list *ngIf="ContentType === home">
+    <mat-nav-list *ngIf="ContentType === 1">
       <a mat-list-item routerLink="/Home">Home</a>
-      <a mat-list-item routerLink="/RiverSide">RiverSide</a>
+      <a mat-list-item routerLink="/Harbour">Harbour</a>
       <a mat-list-item routerLink="/Home/About">About</a>
     </mat-nav-list>
-    <mat-nav-list *ngIf="ContentType === game">
+    <mat-nav-list *ngIf="ContentType === 2">
       <a mat-list-item routerLink="/Home">Home</a>
-      <a mat-list-item routerLink="/RiverSide">RiverSide</a>
+      <a mat-list-item routerLink="/Harbour">Harbour</a>
       <a mat-list-item routerLink="/Home/About">About</a>
       <a mat-list-item (click)="logOut()">Logout</a>
     </mat-nav-list>
@@ -38,15 +38,15 @@
         [ngClass]="{ hideDesktopLinks: isHandset$ | async }"
         class="desktopLinks"
       >
-        <div *ngIf="ContentType === home">
+        <div *ngIf="ContentType === 1">
           <a mat-list-item routerLink="/Home">Home</a>
-          <a mat-list-item routerLink="/RiverSide">RiverSide</a>
+          <!-- <a mat-list-item routerLink="/Harbour">Harbour</a> -->
           <a mat-list-item routerLink="/Home/About">About</a>
         </div>
-        <div *ngIf="ContentType === game">
+        <div *ngIf="ContentType === 2">
           <a mat-list-item routerLink="/Home">Home</a>
-          <a mat-list-item routerLink="/RiverSide">RiverSide</a>
-          <a mat-list-item routerLink="/Home/About">About</a>
+          <a mat-list-item routerLink="/Harbour">Harbour</a>
+          <!-- <a mat-list-item routerLink="/Home/About">About</a> -->
           <a mat-list-item (click)="logOut()">Logout</a>
         </div>
       </div>
