@@ -1,15 +1,13 @@
+import { PlayGroundHomeComponent } from './Components/home/play-ground-home/play-ground-home.component';
 import { HomeComponent } from './Components/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { AboutComponent } from './Components/about/about.component';
+import { PlayGroundComponent } from './Components/home/play-ground-home/play-ground/play-ground.component';
+import { MarketComponent } from './Components/home/play-ground-home/market/market.component';
+import { StoreComponent } from './Components/home/play-ground-home/store/store.component';
+import { PlayGroundHomeModule } from './Components/home/play-ground-home/play-ground-home.module';
 import { AuthGuard } from './Guards/auth.guard';
-import { HomeRouteComponent } from './Components/home/home-route/home-route.component';
-import { AboutComponent } from './Components/home/about/about.component';
-import { GameComponent } from './Components/game/game.component';
-import { GameRouteComponent } from './Components/game/game-route/game-route.component';
-import { PlayGroundComponent } from './Components/game/game-route/play-ground/play-ground.component';
-import { MarketComponent } from './Components/game/game-route/market/market.component';
-import { StoreComponent } from './Components/game/game-route/store/store.component';
 
 const routes: Routes = [
   {
@@ -41,17 +39,17 @@ const routes: Routes = [
         component: GameRouteComponent
       },
       {
-        path: 'Playground',
+        path: 'playground',
         component: PlayGroundComponent
         // pathMatch: 'full'
       },
       {
-        path: 'Market',
+        path: 'market',
         component: MarketComponent
         // pathMatch: 'full'
       },
       {
-        path: 'Store',
+        path: 'store',
         component: StoreComponent
         // pathMatch: 'full'
       }

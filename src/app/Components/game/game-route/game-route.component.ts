@@ -3,11 +3,11 @@ import { Web3Service } from 'src/app/Services/web3/web3.service';
 import { Web3Model } from 'src/app/Models/web3.model';
 
 @Component({
-  selector: 'app-play-home',
-  templateUrl: './play-home.component.html',
-  styleUrls: ['./play-home.component.scss']
+  selector: 'app-game-route',
+  templateUrl: './game-route.component.html',
+  styleUrls: ['./game-route.component.scss']
 })
-export class PlayHomeComponent implements OnInit {
+export class GameRouteComponent implements OnInit {
   UserAddress: string;
   constructor(private web3service: Web3Service) {}
 
