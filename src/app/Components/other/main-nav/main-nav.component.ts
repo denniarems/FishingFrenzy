@@ -2,14 +2,14 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { AuthService } from 'src/app/Services/auth.service';
+import { AuthService } from 'src/app/Services/auth/auth.service';
 
 @Component({
   selector: 'app-main-nav',
   templateUrl: './main-nav.component.html',
   styleUrls: ['./main-nav.component.scss']
 })
-export class MainNavComponent implements OnInit,DoCheck{
+export class MainNavComponent implements OnInit, DoCheck{
   logedIn = false;
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.XSmall)

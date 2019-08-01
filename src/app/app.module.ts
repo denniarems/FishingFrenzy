@@ -15,7 +15,7 @@ import { BackgroundAnimationComponent } from './Components/other/background-anim
 import { PlayGroundHomeComponent } from './Components/home/play-ground-home/play-ground-home.component';
 import { Web3Service } from './Services/web3/web3.service';
 import { HeaderComponent } from './Components/home/play-ground-home/header/header.component';
-import { AuthService } from './Services/auth.service';
+import { AuthService } from './Services/auth/auth.service';
 import { AuthGuard } from './Guards/auth.guard';
 
 @NgModule({
