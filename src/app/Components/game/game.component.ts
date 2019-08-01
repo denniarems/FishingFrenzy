@@ -12,7 +12,7 @@ export class GameComponent implements OnInit {
 
   ngOnInit() {
     if (!this.auth.isActive) {
-      this.route.navigateByUrl('/');
+      this.route.navigateByUrl('/Home');
     }
   }
 }

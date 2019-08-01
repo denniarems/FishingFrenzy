@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, interval } from 'rxjs';
+import { BehaviorSubject, interval, Subscription } from 'rxjs';
 import { Web3Model } from '../../Models/web3.model';
 declare let require: any;
 
@@ -20,7 +20,8 @@ export class Web3Service {
     network: null
   });
   RefreshedAccount = interval(1000);
-  public web3login() {
+  private AccountSubscription: Subscription;
+  public async web3login() {
     return new Promise(async (resolve, reject) => {
       // check dapp browser
       if (window.ethereum || window.web3) {
@@ -33,12 +34,16 @@ export class Web3Service {
             // Acccounts now exposed
           } catch (error) {
             // User denied account access...
-            console.log(error);
+            reject(error);
           }
         } else {
           window.web3 = new Web3(web3.currentProvider);
+          // Acccounts always exposed
+          // web3.eth.sendTransaction({
+          //   /* ... */
+          // });
         }
-        this.RefreshedAccount.subscribe(async () => {
+        this.AccountSubscription = this.RefreshedAccount.subscribe(async () => {
           let Account = await this.GetAccount();
           const Network = await this.GetNetwork();
           if (Account == null) {
@@ -57,12 +62,20 @@ export class Web3Service {
       }
     });
   }
+  public async web3logout() {
+    this.AccountSubscription.unsubscribe();
+    this.Web3Details$.next({
+      account: null,
+      network: null
+    });
+  }
   private async GetAccount(): Promise<string> {
     return new Promise((resolve, reject) => {
       web3.eth.getAccounts((err, accs) => {
         if (err != null) {
           reject('There was an error fetching your accounts.');
         }
+
         // Get the initial account balance so it can be displayed.
         if (accs.length === 0) {
           reject(
