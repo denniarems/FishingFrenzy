@@ -6,36 +6,28 @@ import { AboutComponent } from './Components/about/about.component';
 import { PlayGroundComponent } from './Components/home/play-ground-home/play-ground/play-ground.component';
 import { MarketComponent } from './Components/home/play-ground-home/market/market.component';
 import { StoreComponent } from './Components/home/play-ground-home/store/store.component';
+import { PlayGroundHomeModule } from './Components/home/play-ground-home/play-ground-home.module';
+import { AuthGuard } from './Guards/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    pathMatch: 'full'
   },
   {
     path: 'about',
     component: AboutComponent
   },
   {
-    path: 'mainhome',
-    component: PlayGroundHomeComponent
-  },
-  {
-    path: 'playground',
-    component: PlayGroundComponent
-  },
-  {
-    path: 'market',
-    component: MarketComponent
-  },
-  {
-    path: 'store',
-    component: StoreComponent
+    path: 'home',
+    component: PlayGroundHomeComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), PlayGroundHomeModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

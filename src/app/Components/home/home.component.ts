@@ -12,10 +12,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {}
 
-  login = () => {
-    this.web3service.web3login();
+  login = async () => {
+    await this.web3service.web3login();
     console.log('Login Button Pressed');
     // this._web3Login.MetamaskLogin();
-    this.route.navigateByUrl('/mainhome');
+    this.route.navigateByUrl('/home');
   }
 }

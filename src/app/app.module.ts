@@ -15,6 +15,8 @@ import { BackgroundAnimationComponent } from './Components/other/background-anim
 import { PlayGroundHomeComponent } from './Components/home/play-ground-home/play-ground-home.component';
 import { Web3Service } from './Services/web3/web3.service';
 import { HeaderComponent } from './Components/home/play-ground-home/header/header.component';
+import { AuthService } from './Services/auth.service';
+import { AuthGuard } from './Guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { HeaderComponent } from './Components/home/play-ground-home/header/heade
     HeaderComponent
   ],
   imports: [BrowserModule, AppRoutingModule, MaterialModule],
-  providers: [Web3Service],
+  providers: [Web3Service, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

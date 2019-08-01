@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Web3Service } from 'src/app/Services/web3/web3.service';
+import { Web3Model } from 'src/app/Models/web3.model';
 
 @Component({
   selector: 'app-header',
@@ -15,8 +16,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.Energy = 20;
     this.Coins = 2000;
-    this.web3service.address$.subscribe(data => {
-      this.UserAddress = data;
+    this.web3service.Web3Details$.subscribe((data: Web3Model) => {
+      this.UserAddress = data.account;
     });
   }
 }
