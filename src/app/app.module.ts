@@ -14,6 +14,7 @@ import { MarketComponent } from './Components/home/play-ground-home/market/marke
 import { BackgroundAnimationComponent } from './Components/other/background-animation/background-animation.component';
 import { PlayGroundHomeComponent } from './Components/home/play-ground-home/play-ground-home.component';
 import { Web3Service } from './Services/web3/web3.service';
+import { HeaderComponent } from './Components/home/play-ground-home/header/header.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { Web3Service } from './Services/web3/web3.service';
     PlayComponent,
     MarketComponent,
     BackgroundAnimationComponent,
-    PlayGroundHomeComponent
+    PlayGroundHomeComponent,
+    HeaderComponent
   ],
   imports: [BrowserModule, AppRoutingModule, MaterialModule],
   providers: [Web3Service],
