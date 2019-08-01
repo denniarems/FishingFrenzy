@@ -13,6 +13,13 @@
       <a mat-list-item routerLink="/" *ngIf="!logedIn" routerLinkActive="active"
         >Home</a
       >
+      <a
+        mat-list-item
+        routerLink="/home"
+        *ngIf="logedIn"
+        routerLinkActive="active"
+        >Home</a
+      >
       <a mat-list-item routerLink="/about" routerLinkActive="active">About</a>
       <a mat-list-item *ngIf="logedIn" (click)="logOut()">Logout</a>
     </mat-nav-list>
@@ -35,6 +42,7 @@
         class="desktopLinks"
       >
         <a routerLink="/" *ngIf="!logedIn" routerLinkActive="active">Home</a>
+        <a routerLink="/home" *ngIf="logedIn" routerLinkActive="active">Home</a>
         <a routerLink="/about" routerLinkActive="active">About</a>
         <a id="logOut" *ngIf="logedIn" (click)="logOut()">Logout</a>
       </div>

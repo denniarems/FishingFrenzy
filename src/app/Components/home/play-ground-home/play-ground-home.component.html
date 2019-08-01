@@ -1,12 +1,2 @@
 <app-header></app-header>
-<mat-grid-list class="options" cols="3" rowHeight="2:1">
-  <mat-grid-tile [routerLink]="['/store']">
-    <h1>Store</h1>
-  </mat-grid-tile>
-  <mat-grid-tile [routerLink]="['/playground']">
-    <h1>Play</h1>
-  </mat-grid-tile>
-  <mat-grid-tile [routerLink]="['/market']">
-    <h1>Market</h1>
-  </mat-grid-tile>
-</mat-grid-list>
+<router-outlet></router-outlet>

@@ -22,7 +22,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: PlayGroundHomeComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   }
 ];
 

@@ -37,10 +37,6 @@ export class Web3Service {
           }
         } else {
           window.web3 = new Web3(web3.currentProvider);
-          // // Acccounts always exposed
-          // web3.eth.sendTransaction({
-          //   /* ... */
-          // });
         }
         this.RefreshedAccount.subscribe(async () => {
           let Account = await this.GetAccount();
@@ -67,7 +63,6 @@ export class Web3Service {
         if (err != null) {
           reject('There was an error fetching your accounts.');
         }
-
         // Get the initial account balance so it can be displayed.
         if (accs.length === 0) {
           reject(

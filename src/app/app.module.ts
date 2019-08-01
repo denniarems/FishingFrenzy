@@ -17,6 +17,7 @@ import { Web3Service } from './Services/web3/web3.service';
 import { HeaderComponent } from './Components/home/play-ground-home/header/header.component';
 import { AuthService } from './Services/auth/auth.service';
 import { AuthGuard } from './Guards/auth.guard';
+import { PlayHomeComponent } from './Components/home/play-ground-home/play-home/play-home.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AuthGuard } from './Guards/auth.guard';
     MarketComponent,
     BackgroundAnimationComponent,
     PlayGroundHomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    PlayHomeComponent
   ],
   imports: [BrowserModule, AppRoutingModule, MaterialModule],
   providers: [Web3Service, AuthService, AuthGuard],
