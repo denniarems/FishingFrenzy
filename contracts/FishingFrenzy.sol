@@ -15,10 +15,10 @@ contract FishingFrenzy{
         Fish fish;
     }
     mapping(address => User) Userdeails;
-    function GetUserDetails() public view returns(bool _isexsiting, uint8 _weight ,Rarity _rarity){
-        _isexsiting = Userdeails[msg.sender].ExistingUser;
-        _weight=Userdeails[msg.sender].fish.weight;
-        _rarity=Userdeails[msg.sender].fish.fishRarity;
+
+    function GetUserDetails() public view returns(bool _isexsiting){
+        _isexsiting  = Userdeails [msg.sender] . ExistingUser;
+
     }
     function SetUserDetails() public{
         Userdeails[msg.sender].ExistingUser = true;

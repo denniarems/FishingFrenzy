@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Web3Service } from '../Services/web3/web3.service';
@@ -7,7 +7,7 @@ import { Web3Service } from '../Services/web3/web3.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  constructor(private web3service: Web3Service) {}
+  constructor(private web3service: Web3Service , private route:Router) {}
   canActivate(): Observable<boolean> {
     return this.web3service.Web3Details$.pipe(
       map(
@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
           if (n.account) {
             return true;
           }
-          return false;
+          this.route.navigateByUrl('/Home')
         }
       )
     );
