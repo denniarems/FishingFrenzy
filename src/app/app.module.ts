@@ -15,7 +15,6 @@ import { GameComponent } from './Components/game/game.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './Modules/material/material.module';
 import { Web3Service } from './Services/web3/web3.service';
-import { AuthService } from './Services/auth/auth.service';
 import { AuthGuard } from './Guards/auth.guard';
 
 @NgModule({
@@ -34,7 +33,7 @@ import { AuthGuard } from './Guards/auth.guard';
     GameComponent
   ],
   imports: [BrowserModule, AppRoutingModule, MaterialModule],
-  providers: [Web3Service, AuthService, AuthGuard],
+  providers: [Web3Service, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

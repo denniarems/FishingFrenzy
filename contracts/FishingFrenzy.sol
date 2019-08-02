@@ -13,7 +13,7 @@ contract FishingFrenzy{
     }
     mapping(address => User) Userdeails;
     function GetUserDetails() public view returns(bool _isexsiting){
-        _isexsiting  =Userdeails[msg.sender].ExistingUser;
+        _isexsiting  = Userdeails [msg.sender] . ExistingUser;
     }
     function SetUserDetails() public{
         Userdeails[msg.sender].ExistingUser = true;
