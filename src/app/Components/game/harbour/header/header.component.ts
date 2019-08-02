@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   UserAddress: string;
   Energy: number;
   Coins: number;
+  Network: string;
   constructor(private web3service: Web3Service) {}
 
   ngOnInit() {
@@ -18,6 +19,7 @@ export class HeaderComponent implements OnInit {
     this.Coins = 2000;
     this.web3service.Web3Details$.subscribe((data: Web3Model) => {
       this.UserAddress = data.account;
+      this.Network = data.network;
     });
   }
 }
