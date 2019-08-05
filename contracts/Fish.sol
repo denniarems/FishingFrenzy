@@ -14,4 +14,5 @@ contract Fish{
         ThisFish.Rarity = _rarity;
         ThisFish.Price = price;
     }
+    
 }
