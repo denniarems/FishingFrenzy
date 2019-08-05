@@ -8,11 +8,13 @@ contract Fish{
         uint256 Price;
     }
     FishModel public ThisFish;
-    constructor(address _owner,uint256 _rarity,uint256 _weight,uint256 price) public{
+    
+    
+        constructor(address _owner,uint256 _rarity,uint256 _weight,uint256 price) public{
         ThisFish.Owner = _owner;
         ThisFish.Weight = _weight;
         ThisFish.Rarity = _rarity;
         ThisFish.Price = price;
     }
-    
+
 }
