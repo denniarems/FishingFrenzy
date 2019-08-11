@@ -1,7 +1,7 @@
 pragma solidity ^0.5.0;
 
 
-import './openzeppelin-solidity/contracts/math/SafeMath.sol';
+import './SafeMath.sol';
 // import './SafeMath.sol';
 contract FishRod {
     using SafeMath for uint256;
