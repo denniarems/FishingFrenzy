@@ -1,0 +1,1946 @@
+{
+  "contractName": "FrenzyFish",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "UpgradeFishRod",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "UsersRod",
+      "outputs": [
+        {
+          "name": "Level",
+          "type": "uint256"
+        },
+        {
+          "name": "Power",
+          "type": "uint256"
+        },
+        {
+          "name": "CurrentPrice",
+          "type": "uint256"
+        },
+        {
+          "name": "NextPrice",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "FirstUserInitialRod",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "Fishes",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "Fishing",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "ListAllFishes",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "fish",
+          "type": "address"
+        }
+      ],
+      "name": "GetFishDetails",
+      "outputs": [
+        {
+          "name": "_rarity",
+          "type": "uint256"
+        },
+        {
+          "name": "_weight",
+          "type": "uint256"
+        },
+        {
+          "name": "_price",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"ListAllFishes\",\"outputs\":[{\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"Fishing\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"UpgradeFishRod\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"fish\",\"type\":\"address\"}],\"name\":\"GetFishDetails\",\"outputs\":[{\"name\":\"_rarity\",\"type\":\"uint256\"},{\"name\":\"_weight\",\"type\":\"uint256\"},{\"name\":\"_price\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"UsersRod\",\"outputs\":[{\"name\":\"Level\",\"type\":\"uint256\"},{\"name\":\"Power\",\"type\":\"uint256\"},{\"name\":\"CurrentPrice\",\"type\":\"uint256\"},{\"name\":\"NextPrice\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"FirstUserInitialRod\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"Fishes\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/ashiii/Desktop/project-master/ced-b3-g06/contracts/FrenzyFish.sol\":\"FrenzyFish\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ashiii/Desktop/project-master/ced-b3-g06/contracts/Fish.sol\":{\"keccak256\":\"0x292b20df35ee2efe1eb9dc788ecb2b9cc6afdac1d75dedb59148f8c2c13b5a7f\",\"urls\":[\"bzzr://c56fc8fbc312459c0b2a8b07aef4121d07874cf4b87faefce4008d015e601a3a\"]},\"/home/ashiii/Desktop/project-master/ced-b3-g06/contracts/FishRod.sol\":{\"keccak256\":\"0xcc1731d57f6e0ed7cf15e1193922caf5a5d61b074d1bfc1bffa44351e9731534\",\"urls\":[\"bzzr://ea352cf37371c8959bd795418f7f6f5715424c4781f1d7497b75b43082f2db82\"]},\"/home/ashiii/Desktop/project-master/ced-b3-g06/contracts/FrenzyFish.sol\":{\"keccak256\":\"0xbeb75dc19b8277577eb05d064c2b0fb610d779044272c467de8e49e75c00cf02\",\"urls\":[\"bzzr://64bcab3f578cf0cc614603a8e3b5d5d7bb7eebacc67bcd241137b0ee7f5c19b1\"]},\"/home/ashiii/Desktop/project-master/ced-b3-g06/contracts/SafeMath.sol\":{\"keccak256\":\"0x4ccf2d7b51873db1ccfd54ca2adae5eac3b184f9699911ed4490438419f1c690\",\"urls\":[\"bzzr://1604f5b6d6e916c154efd8c6720cda069e5ba32dfa0a9dedf2b42e5b02d07f89\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061002861002d640100000000026401000000009004565b610197565b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000015414156101955760016000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000018190555060036000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206001018190555060ff6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600201819055506101816000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600301819055505b565b611377806101a66000396000f3fe608060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806328347b6c146100885780636765bc16146100f457806392a8a7891461010b5780639e96c3ad14610122578063a089dcde14610195578063a5e12aef1461020f578063c92f770514610226575b600080fd5b34801561009457600080fd5b5061009d6102a1565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156100e05780820151818401526020810190506100c5565b505050509050019250505060405180910390f35b34801561010057600080fd5b5061010961032f565b005b34801561011757600080fd5b50610120610443565b005b34801561012e57600080fd5b506101716004803603602081101561014557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061072e565b60405180848152602001838152602001828152602001935050505060405180910390f35b3480156101a157600080fd5b506101e4600480360360208110156101b857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506107f1565b6040518085815260200184815260200183815260200182815260200194505050505060405180910390f35b34801561021b57600080fd5b50610224610821565b005b34801561023257600080fd5b5061025f6004803603602081101561024957600080fd5b810190808035906020019092919050505061098b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6060600180548060200260200160405190810160405280929190818152602001828054801561032557602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116102db575b5050505050905090565b6000336000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000015461037c610a53565b808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050604051809103906000f0801580156103d5573d6000803e3d6000fd5b5090506001808290806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050565b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600001541415151561049157fe5b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060030154905061052c60016000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600001546109c990919063ffffffff16565b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600001819055506105c660036000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600101546109c990919063ffffffff16565b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600101819055506106a06000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600201546000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600301546109c990919063ffffffff16565b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060030181905550806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206002018190555050565b60008060008373ffffffffffffffffffffffffffffffffffffffff1663cc2e8cca6040518163ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040160606040518083038186803b15801561079557600080fd5b505afa1580156107a9573d6000803e3d6000fd5b505050506040513d60608110156107bf57600080fd5b810190808051906020019092919080519060200190929190805190602001909291905050509250925092509193909250565b60006020528060005260406000206000915090508060000154908060010154908060020154908060030154905084565b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000015414156109895760016000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000018190555060036000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206001018190555060ff6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600201819055506101816000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600301819055505b565b60018181548110151561099a57fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000808284019050838110151515610a49576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f536166654d6174683a206164646974696f6e206f766572666c6f77000000000081525060200191505060405180910390fd5b8091505092915050565b6040516108e880610a648339019056fe608060405234801561001057600080fd5b506040516040806108e88339810180604052604081101561003057600080fd5b81019080805190602001909291908051906020019092919050505081600060020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506100a6610101640100000000026401000000009004565b60008001819055506100c681610176640100000000026401000000009004565b6000600101819055506100f160006001015460008001546101c4640100000000026401000000009004565b60006003018190555050506103d3565b600080610129606442444501016101ee640100000000026102f5179091906401000000009004565b14156101385760039050610173565b600061015f600a42444501016101ee640100000000026102f5179091906401000000009004565b141561016e5760029050610173565b600190505b90565b60006101bd60016101a060038502426101ee640100000000026102f5179091906401000000009004565b038361027c64010000000002610383179091906401000000009004565b9050919050565b60006101e682846103066401000000000261040d179091906401000000009004565b905092915050565b6000808214151515610268576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260188152602001807f536166654d6174683a206d6f64756c6f206279207a65726f000000000000000081525060200191505060405180910390fd5b818381151561027357fe5b06905092915050565b60008082840190508381101515156102fc576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f536166654d6174683a206164646974696f6e206f766572666c6f77000000000081525060200191505060405180910390fd5b8091505092915050565b60008083141561031957600090506103cd565b6000828402905082848281151561032c57fe5b041415156103c8576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260218152602001807f536166654d6174683a206d756c7469706c69636174696f6e206f766572666c6f81526020017f770000000000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b809150505b92915050565b610506806103e26000396000f3fe60806040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806344c57bc6146100725780636ff8ec36146100de578063b4f6f5091461012d578063cc2e8cca14610158578063d1353c6814610191575b600080fd5b34801561007e57600080fd5b506100876101ea565b604051808581526020018481526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200194505050505060405180910390f35b3480156100ea57600080fd5b506101176004803603602081101561010157600080fd5b8101908080359060200190929190505050610228565b6040518082815260200191505060405180910390f35b34801561013957600080fd5b5061014261025c565b6040518082815260200191505060405180910390f35b34801561016457600080fd5b5061016d6102b7565b60405180848152602001838152602001828152602001935050505060405180910390f35b34801561019d57600080fd5b506101d4600480360360408110156101b457600080fd5b8101908080359060200190929190803590602001909291905050506102d8565b6040518082815260200191505060405180910390f35b60008060000154908060010154908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060030154905084565b6000610255600161024560038502426102f590919063ffffffff16565b038361038390919063ffffffff16565b9050919050565b600080610277606442444501016102f590919063ffffffff16565b141561028657600390506102b4565b60006102a0600a42444501016102f590919063ffffffff16565b14156102af57600290506102b4565b600190505b90565b60008060008060000154600060010154600060030154925092509250909192565b60006102ed828461040d90919063ffffffff16565b905092915050565b600080821415151561036f576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260188152602001807f536166654d6174683a206d6f64756c6f206279207a65726f000000000000000081525060200191505060405180910390fd5b818381151561037a57fe5b06905092915050565b6000808284019050838110151515610403576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f536166654d6174683a206164646974696f6e206f766572666c6f77000000000081525060200191505060405180910390fd5b8091505092915050565b60008083141561042057600090506104d4565b6000828402905082848281151561043357fe5b041415156104cf576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260218152602001807f536166654d6174683a206d756c7469706c69636174696f6e206f766572666c6f81526020017f770000000000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b809150505b9291505056fea165627a7a723058208cc9dbb9217016fcdb80d4dc66e01676e48070f20314f92bb855979336df86bc0029a165627a7a7230582007137f3be7ea869e4234ba0f1fccbd0d03c767a6bf46104137d49a8ebda21c8a0029",
+  "deployedBytecode": "0x608060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806328347b6c146100885780636765bc16146100f457806392a8a7891461010b5780639e96c3ad14610122578063a089dcde14610195578063a5e12aef1461020f578063c92f770514610226575b600080fd5b34801561009457600080fd5b5061009d6102a1565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156100e05780820151818401526020810190506100c5565b505050509050019250505060405180910390f35b34801561010057600080fd5b5061010961032f565b005b34801561011757600080fd5b50610120610443565b005b34801561012e57600080fd5b506101716004803603602081101561014557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061072e565b60405180848152602001838152602001828152602001935050505060405180910390f35b3480156101a157600080fd5b506101e4600480360360208110156101b857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506107f1565b6040518085815260200184815260200183815260200182815260200194505050505060405180910390f35b34801561021b57600080fd5b50610224610821565b005b34801561023257600080fd5b5061025f6004803603602081101561024957600080fd5b810190808035906020019092919050505061098b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6060600180548060200260200160405190810160405280929190818152602001828054801561032557602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116102db575b5050505050905090565b6000336000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000015461037c610a53565b808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050604051809103906000f0801580156103d5573d6000803e3d6000fd5b5090506001808290806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050565b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600001541415151561049157fe5b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060030154905061052c60016000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600001546109c990919063ffffffff16565b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600001819055506105c660036000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600101546109c990919063ffffffff16565b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600101819055506106a06000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600201546000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600301546109c990919063ffffffff16565b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060030181905550806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206002018190555050565b60008060008373ffffffffffffffffffffffffffffffffffffffff1663cc2e8cca6040518163ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040160606040518083038186803b15801561079557600080fd5b505afa1580156107a9573d6000803e3d6000fd5b505050506040513d60608110156107bf57600080fd5b810190808051906020019092919080519060200190929190805190602001909291905050509250925092509193909250565b60006020528060005260406000206000915090508060000154908060010154908060020154908060030154905084565b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000015414156109895760016000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000018190555060036000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206001018190555060ff6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600201819055506101816000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600301819055505b565b60018181548110151561099a57fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000808284019050838110151515610a49576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f536166654d6174683a206164646974696f6e206f766572666c6f77000000000081525060200191505060405180910390fd5b8091505092915050565b6040516108e880610a648339019056fe608060405234801561001057600080fd5b506040516040806108e88339810180604052604081101561003057600080fd5b81019080805190602001909291908051906020019092919050505081600060020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506100a6610101640100000000026401000000009004565b60008001819055506100c681610176640100000000026401000000009004565b6000600101819055506100f160006001015460008001546101c4640100000000026401000000009004565b60006003018190555050506103d3565b600080610129606442444501016101ee640100000000026102f5179091906401000000009004565b14156101385760039050610173565b600061015f600a42444501016101ee640100000000026102f5179091906401000000009004565b141561016e5760029050610173565b600190505b90565b60006101bd60016101a060038502426101ee640100000000026102f5179091906401000000009004565b038361027c64010000000002610383179091906401000000009004565b9050919050565b60006101e682846103066401000000000261040d179091906401000000009004565b905092915050565b6000808214151515610268576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260188152602001807f536166654d6174683a206d6f64756c6f206279207a65726f000000000000000081525060200191505060405180910390fd5b818381151561027357fe5b06905092915050565b60008082840190508381101515156102fc576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f536166654d6174683a206164646974696f6e206f766572666c6f77000000000081525060200191505060405180910390fd5b8091505092915050565b60008083141561031957600090506103cd565b6000828402905082848281151561032c57fe5b041415156103c8576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260218152602001807f536166654d6174683a206d756c7469706c69636174696f6e206f766572666c6f81526020017f770000000000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b809150505b92915050565b610506806103e26000396000f3fe60806040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806344c57bc6146100725780636ff8ec36146100de578063b4f6f5091461012d578063cc2e8cca14610158578063d1353c6814610191575b600080fd5b34801561007e57600080fd5b506100876101ea565b604051808581526020018481526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200194505050505060405180910390f35b3480156100ea57600080fd5b506101176004803603602081101561010157600080fd5b8101908080359060200190929190505050610228565b6040518082815260200191505060405180910390f35b34801561013957600080fd5b5061014261025c565b6040518082815260200191505060405180910390f35b34801561016457600080fd5b5061016d6102b7565b60405180848152602001838152602001828152602001935050505060405180910390f35b34801561019d57600080fd5b506101d4600480360360408110156101b457600080fd5b8101908080359060200190929190803590602001909291905050506102d8565b6040518082815260200191505060405180910390f35b60008060000154908060010154908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060030154905084565b6000610255600161024560038502426102f590919063ffffffff16565b038361038390919063ffffffff16565b9050919050565b600080610277606442444501016102f590919063ffffffff16565b141561028657600390506102b4565b60006102a0600a42444501016102f590919063ffffffff16565b14156102af57600290506102b4565b600190505b90565b60008060008060000154600060010154600060030154925092509250909192565b60006102ed828461040d90919063ffffffff16565b905092915050565b600080821415151561036f576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260188152602001807f536166654d6174683a206d6f64756c6f206279207a65726f000000000000000081525060200191505060405180910390fd5b818381151561037a57fe5b06905092915050565b6000808284019050838110151515610403576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f536166654d6174683a206164646974696f6e206f766572666c6f77000000000081525060200191505060405180910390fd5b8091505092915050565b60008083141561042057600090506104d4565b6000828402905082848281151561043357fe5b041415156104cf576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260218152602001807f536166654d6174683a206d756c7469706c69636174696f6e206f766572666c6f81526020017f770000000000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b809150505b9291505056fea165627a7a723058208cc9dbb9217016fcdb80d4dc66e01676e48070f20314f92bb855979336df86bc0029a165627a7a7230582007137f3be7ea869e4234ba0f1fccbd0d03c767a6bf46104137d49a8ebda21c8a0029",
+  "sourceMap": "69:1057:2:-;;;106:60;8:9:-1;5:2;;;30:1;27;20:12;5:2;106:60:2;138:21;:19;;;:21;;;:::i;:::-;69:1057;;297:257:1;373:1;343:8;:20;352:10;343:20;;;;;;;;;;;;;;;:26;;;:31;340:213;;;414:1;385:8;:20;394:10;385:20;;;;;;;;;;;;;;;:26;;:30;;;;454:1;425:8;:20;434:10;425:20;;;;;;;;;;;;;;;:26;;:30;;;;501:3;465:8;:20;474:10;465:20;;;;;;;;;;;;;;;:33;;:39;;;;547:3;514:8;:20;523:10;514:20;;;;;;;;;;;;;;;:30;;:36;;;;340:213;297:257::o;69:1057:2:-;;;;;;;",
+  "deployedSourceMap": "69:1057:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;365:95;;8:9:-1;5:2;;;30:1;27;20:12;5:2;365:95:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;365:95:2;;;;;;;;;;;;;;;;;200:159;;8:9:-1;5:2;;;30:1;27;20:12;5:2;200:159:2;;;;;;559:449:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;559:449:1;;;;;;469:155:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;469:155:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;469:155:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;256:38:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;256:38:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;256:38:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;297:257;;8:9:-1;5:2;;;30:1;27;20:12;5:2;297:257:1;;;;;;171:23:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;171:23:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;171:23:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;365:95;410:16;446:6;439:13;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;365:95;:::o;200:159::-;244:15;279:10;290:8;:20;299:10;290:20;;;;;;;;;;;;;;;:26;;;270:47;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;270:47:2;244:74;;351:1;328:6;340:7;328:20;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;328:20:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:24;;200:159;:::o;559:449:1:-;636:1;608:8;:20;617:10;608:20;;;;;;;;;;;;;;;:26;;;:29;;601:37;;;;;;648:13;664:8;:20;673:10;664:20;;;;;;;;;;;;;;;:30;;;648:46;;733:33;764:1;733:8;:20;742:10;733:20;;;;;;;;;;;;;;;:26;;;:30;;:33;;;;:::i;:::-;704:8;:20;713:10;704:20;;;;;;;;;;;;;;;:26;;:62;;;;805:33;836:1;805:8;:20;814:10;805:20;;;;;;;;;;;;;;;:26;;;:30;;:33;;;;:::i;:::-;776:8;:20;785:10;776:20;;;;;;;;;;;;;;;:26;;:62;;;;881:69;916:8;:20;925:10;916:20;;;;;;;;;;;;;;;:33;;;881:8;:20;890:10;881:20;;;;;;;;;;;;;;;:30;;;:34;;:69;;;;:::i;:::-;848:8;:20;857:10;848:20;;;;;;;;;;;;;;;:30;;:102;;;;996:5;960:8;:20;969:10;960:20;;;;;;;;;;;;;;;:33;;:41;;;;559:449;:::o;469:155:2:-;527:15;543;559:14;597:4;592:21;;;:23;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;592:23:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;592:23:2;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;592:23:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;584:33;;;;;;469:155;;;;;:::o;256:38:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;297:257::-;373:1;343:8;:20;352:10;343:20;;;;;;;;;;;;;;;:26;;;:31;340:213;;;414:1;385:8;:20;394:10;385:20;;;;;;;;;;;;;;;:26;;:30;;;;454:1;425:8;:20;434:10;425:20;;;;;;;;;;;;;;;:26;;:30;;;;501:3;465:8;:20;474:10;465:20;;;;;;;;;;;;;;;:33;;:39;;;;547:3;514:8;:20;523:10;514:20;;;;;;;;;;;;;;;:30;;:36;;;;340:213;297:257::o;171:23:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;834:176:4:-;892:7;911:9;927:1;923;:5;911:17;;951:1;946;:6;;938:46;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1002:1;995:8;;;834:176;;;;:::o;69:1057:2:-;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\nimport './Fish.sol';\nimport './FishRod.sol';\ncontract FrenzyFish is FishRod{\n\n    constructor () public {\n        FirstUserInitialRod();\n    }\n    address[] public Fishes;\n    function Fishing() public{\n        \n        address newfish = address(new Fish(msg.sender,UsersRod[msg.sender].Level));\n        Fishes.push(newfish) - 1;\n    }\n     function ListAllFishes() public view returns(address[] memory) {\n         return Fishes;\n     }\n        function GetFishDetails(address fish) public view returns(uint256 _rarity,uint256 _weight,uint256 _price){\n        return( Fish(fish).GetDetails() );\n    }\n\n\n    // function RechargeUsingFish(address _Fish,uint256 _position) public{\n    //     require(FishOwner[_Fish] == msg.sender,\"User is not Fish owner\");\n    //     require(_position >= 0 && _position < Players[msg.sender].Towns.length,\"Invalid Array Index\");\n    //     require(Players[msg.sender].Towns[_position] == _Fish,\"Invalid Town Index\");\n    //     Fish(_Fish).DestroyFish();\n    //     FishOwner[_Fish] = address(0);\n    //     Players[msg.sender].Towns[_position] = address(0);\n    // }\n\n}",
+  "sourcePath": "/home/ashiii/Desktop/project-master/ced-b3-g06/contracts/FrenzyFish.sol",
+  "ast": {
+    "absolutePath": "/home/ashiii/Desktop/project-master/ced-b3-g06/contracts/FrenzyFish.sol",
+    "exportedSymbols": {
+      "FrenzyFish": [
+        369
+      ]
+    },
+    "id": 370,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 299,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "absolutePath": "/home/ashiii/Desktop/project-master/ced-b3-g06/contracts/Fish.sol",
+        "file": "./Fish.sol",
+        "id": 300,
+        "nodeType": "ImportDirective",
+        "scope": 370,
+        "sourceUnit": 154,
+        "src": "24:20:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/ashiii/Desktop/project-master/ced-b3-g06/contracts/FishRod.sol",
+        "file": "./FishRod.sol",
+        "id": 301,
+        "nodeType": "ImportDirective",
+        "scope": 370,
+        "sourceUnit": 298,
+        "src": "45:23:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 302,
+              "name": "FishRod",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 297,
+              "src": "92:7:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_FishRod_$297",
+                "typeString": "contract FishRod"
+              }
+            },
+            "id": 303,
+            "nodeType": "InheritanceSpecifier",
+            "src": "92:7:2"
+          }
+        ],
+        "contractDependencies": [
+          153,
+          297
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 369,
+        "linearizedBaseContracts": [
+          369,
+          297
+        ],
+        "name": "FrenzyFish",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 309,
+              "nodeType": "Block",
+              "src": "128:38:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 306,
+                      "name": "FirstUserInitialRod",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 217,
+                      "src": "138:19:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 307,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "138:21:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 308,
+                  "nodeType": "ExpressionStatement",
+                  "src": "138:21:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 310,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 304,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "118:2:2"
+            },
+            "returnParameters": {
+              "id": 305,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "128:0:2"
+            },
+            "scope": 369,
+            "src": "106:60:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 313,
+            "name": "Fishes",
+            "nodeType": "VariableDeclaration",
+            "scope": 369,
+            "src": "171:23:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 311,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "171:7:2",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 312,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "171:9:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 339,
+              "nodeType": "Block",
+              "src": "225:134:2",
+              "statements": [
+                {
+                  "assignments": [
+                    317
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 317,
+                      "name": "newfish",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 339,
+                      "src": "244:15:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 316,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "244:7:2",
+                        "stateMutability": "nonpayable",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 330,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 321,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 574,
+                              "src": "279:3:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 322,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "279:10:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "baseExpression": {
+                                "argumentTypes": null,
+                                "id": 323,
+                                "name": "UsersRod",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 172,
+                                "src": "290:8:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Rod_$168_storage_$",
+                                  "typeString": "mapping(address => struct FishRod.Rod storage ref)"
+                                }
+                              },
+                              "id": 326,
+                              "indexExpression": {
+                                "argumentTypes": null,
+                                "expression": {
+                                  "argumentTypes": null,
+                                  "id": 324,
+                                  "name": "msg",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 574,
+                                  "src": "299:3:2",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_magic_message",
+                                    "typeString": "msg"
+                                  }
+                                },
+                                "id": 325,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberName": "sender",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": null,
+                                "src": "299:10:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "290:20:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Rod_$168_storage",
+                                "typeString": "struct FishRod.Rod storage ref"
+                              }
+                            },
+                            "id": 327,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "Level",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 161,
+                            "src": "290:26:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "id": 320,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "NewExpression",
+                          "src": "270:8:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_uint256_$returns$_t_contract$_Fish_$153_$",
+                            "typeString": "function (address,uint256) returns (contract Fish)"
+                          },
+                          "typeName": {
+                            "contractScope": null,
+                            "id": 319,
+                            "name": "Fish",
+                            "nodeType": "UserDefinedTypeName",
+                            "referencedDeclaration": 153,
+                            "src": "274:4:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Fish_$153",
+                              "typeString": "contract Fish"
+                            }
+                          }
+                        },
+                        "id": 328,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "270:47:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Fish_$153",
+                          "typeString": "contract Fish"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Fish_$153",
+                          "typeString": "contract Fish"
+                        }
+                      ],
+                      "id": 318,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "262:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 329,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "262:56:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "244:74:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 337,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 334,
+                          "name": "newfish",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 317,
+                          "src": "340:7:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 331,
+                          "name": "Fishes",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 313,
+                          "src": "328:6:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                            "typeString": "address[] storage ref"
+                          }
+                        },
+                        "id": 333,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "push",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "328:11:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_arraypush_nonpayable$_t_address_$returns$_t_uint256_$",
+                          "typeString": "function (address) returns (uint256)"
+                        }
+                      },
+                      "id": 335,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "328:20:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "-",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 336,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "351:1:2",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "328:24:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 338,
+                  "nodeType": "ExpressionStatement",
+                  "src": "328:24:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 340,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "Fishing",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 314,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "216:2:2"
+            },
+            "returnParameters": {
+              "id": 315,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "225:0:2"
+            },
+            "scope": 369,
+            "src": "200:159:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 348,
+              "nodeType": "Block",
+              "src": "428:32:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 346,
+                    "name": "Fishes",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 313,
+                    "src": "446:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                      "typeString": "address[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 345,
+                  "id": 347,
+                  "nodeType": "Return",
+                  "src": "439:13:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 349,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "ListAllFishes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 341,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "387:2:2"
+            },
+            "returnParameters": {
+              "id": 345,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 344,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 349,
+                  "src": "410:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 342,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "410:7:2",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 343,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "410:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "409:18:2"
+            },
+            "scope": 369,
+            "src": "365:95:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 367,
+              "nodeType": "Block",
+              "src": "574:50:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "expression": {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "id": 361,
+                                "name": "fish",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 351,
+                                "src": "597:4:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "id": 360,
+                              "name": "Fish",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 153,
+                              "src": "592:4:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_Fish_$153_$",
+                                "typeString": "type(contract Fish)"
+                              }
+                            },
+                            "id": 362,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "592:10:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Fish_$153",
+                              "typeString": "contract Fish"
+                            }
+                          },
+                          "id": 363,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "GetDetails",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 152,
+                          "src": "592:21:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$__$returns$_t_uint256_$_t_uint256_$_t_uint256_$",
+                            "typeString": "function () view external returns (uint256,uint256,uint256)"
+                          }
+                        },
+                        "id": 364,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "592:23:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
+                          "typeString": "tuple(uint256,uint256,uint256)"
+                        }
+                      }
+                    ],
+                    "id": 365,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "590:27:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
+                      "typeString": "tuple(uint256,uint256,uint256)"
+                    }
+                  },
+                  "functionReturnParameters": 359,
+                  "id": 366,
+                  "nodeType": "Return",
+                  "src": "584:33:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 368,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "GetFishDetails",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 352,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 351,
+                  "name": "fish",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 368,
+                  "src": "493:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 350,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "493:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "492:14:2"
+            },
+            "returnParameters": {
+              "id": 359,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 354,
+                  "name": "_rarity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 368,
+                  "src": "527:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 353,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "527:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 356,
+                  "name": "_weight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 368,
+                  "src": "543:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 355,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "543:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 358,
+                  "name": "_price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 368,
+                  "src": "559:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 357,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "559:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "526:48:2"
+            },
+            "scope": 369,
+            "src": "469:155:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 370,
+        "src": "69:1057:2"
+      }
+    ],
+    "src": "0:1126:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/ashiii/Desktop/project-master/ced-b3-g06/contracts/FrenzyFish.sol",
+    "exportedSymbols": {
+      "FrenzyFish": [
+        369
+      ]
+    },
+    "id": 370,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 299,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "absolutePath": "/home/ashiii/Desktop/project-master/ced-b3-g06/contracts/Fish.sol",
+        "file": "./Fish.sol",
+        "id": 300,
+        "nodeType": "ImportDirective",
+        "scope": 370,
+        "sourceUnit": 154,
+        "src": "24:20:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/ashiii/Desktop/project-master/ced-b3-g06/contracts/FishRod.sol",
+        "file": "./FishRod.sol",
+        "id": 301,
+        "nodeType": "ImportDirective",
+        "scope": 370,
+        "sourceUnit": 298,
+        "src": "45:23:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 302,
+              "name": "FishRod",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 297,
+              "src": "92:7:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_FishRod_$297",
+                "typeString": "contract FishRod"
+              }
+            },
+            "id": 303,
+            "nodeType": "InheritanceSpecifier",
+            "src": "92:7:2"
+          }
+        ],
+        "contractDependencies": [
+          153,
+          297
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 369,
+        "linearizedBaseContracts": [
+          369,
+          297
+        ],
+        "name": "FrenzyFish",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 309,
+              "nodeType": "Block",
+              "src": "128:38:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 306,
+                      "name": "FirstUserInitialRod",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 217,
+                      "src": "138:19:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 307,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "138:21:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 308,
+                  "nodeType": "ExpressionStatement",
+                  "src": "138:21:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 310,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 304,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "118:2:2"
+            },
+            "returnParameters": {
+              "id": 305,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "128:0:2"
+            },
+            "scope": 369,
+            "src": "106:60:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 313,
+            "name": "Fishes",
+            "nodeType": "VariableDeclaration",
+            "scope": 369,
+            "src": "171:23:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 311,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "171:7:2",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 312,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "171:9:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 339,
+              "nodeType": "Block",
+              "src": "225:134:2",
+              "statements": [
+                {
+                  "assignments": [
+                    317
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 317,
+                      "name": "newfish",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 339,
+                      "src": "244:15:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 316,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "244:7:2",
+                        "stateMutability": "nonpayable",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 330,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 321,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 574,
+                              "src": "279:3:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 322,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "279:10:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "baseExpression": {
+                                "argumentTypes": null,
+                                "id": 323,
+                                "name": "UsersRod",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 172,
+                                "src": "290:8:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Rod_$168_storage_$",
+                                  "typeString": "mapping(address => struct FishRod.Rod storage ref)"
+                                }
+                              },
+                              "id": 326,
+                              "indexExpression": {
+                                "argumentTypes": null,
+                                "expression": {
+                                  "argumentTypes": null,
+                                  "id": 324,
+                                  "name": "msg",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 574,
+                                  "src": "299:3:2",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_magic_message",
+                                    "typeString": "msg"
+                                  }
+                                },
+                                "id": 325,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberName": "sender",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": null,
+                                "src": "299:10:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "290:20:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Rod_$168_storage",
+                                "typeString": "struct FishRod.Rod storage ref"
+                              }
+                            },
+                            "id": 327,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "Level",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 161,
+                            "src": "290:26:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "id": 320,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "NewExpression",
+                          "src": "270:8:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_uint256_$returns$_t_contract$_Fish_$153_$",
+                            "typeString": "function (address,uint256) returns (contract Fish)"
+                          },
+                          "typeName": {
+                            "contractScope": null,
+                            "id": 319,
+                            "name": "Fish",
+                            "nodeType": "UserDefinedTypeName",
+                            "referencedDeclaration": 153,
+                            "src": "274:4:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Fish_$153",
+                              "typeString": "contract Fish"
+                            }
+                          }
+                        },
+                        "id": 328,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "270:47:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Fish_$153",
+                          "typeString": "contract Fish"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Fish_$153",
+                          "typeString": "contract Fish"
+                        }
+                      ],
+                      "id": 318,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "262:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 329,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "262:56:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "244:74:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 337,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 334,
+                          "name": "newfish",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 317,
+                          "src": "340:7:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 331,
+                          "name": "Fishes",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 313,
+                          "src": "328:6:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                            "typeString": "address[] storage ref"
+                          }
+                        },
+                        "id": 333,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "push",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "328:11:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_arraypush_nonpayable$_t_address_$returns$_t_uint256_$",
+                          "typeString": "function (address) returns (uint256)"
+                        }
+                      },
+                      "id": 335,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "328:20:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "-",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 336,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "351:1:2",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "328:24:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 338,
+                  "nodeType": "ExpressionStatement",
+                  "src": "328:24:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 340,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "Fishing",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 314,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "216:2:2"
+            },
+            "returnParameters": {
+              "id": 315,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "225:0:2"
+            },
+            "scope": 369,
+            "src": "200:159:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 348,
+              "nodeType": "Block",
+              "src": "428:32:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 346,
+                    "name": "Fishes",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 313,
+                    "src": "446:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                      "typeString": "address[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 345,
+                  "id": 347,
+                  "nodeType": "Return",
+                  "src": "439:13:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 349,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "ListAllFishes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 341,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "387:2:2"
+            },
+            "returnParameters": {
+              "id": 345,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 344,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 349,
+                  "src": "410:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 342,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "410:7:2",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 343,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "410:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "409:18:2"
+            },
+            "scope": 369,
+            "src": "365:95:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 367,
+              "nodeType": "Block",
+              "src": "574:50:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "expression": {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "id": 361,
+                                "name": "fish",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 351,
+                                "src": "597:4:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "id": 360,
+                              "name": "Fish",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 153,
+                              "src": "592:4:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_Fish_$153_$",
+                                "typeString": "type(contract Fish)"
+                              }
+                            },
+                            "id": 362,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "592:10:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Fish_$153",
+                              "typeString": "contract Fish"
+                            }
+                          },
+                          "id": 363,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "GetDetails",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 152,
+                          "src": "592:21:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$__$returns$_t_uint256_$_t_uint256_$_t_uint256_$",
+                            "typeString": "function () view external returns (uint256,uint256,uint256)"
+                          }
+                        },
+                        "id": 364,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "592:23:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
+                          "typeString": "tuple(uint256,uint256,uint256)"
+                        }
+                      }
+                    ],
+                    "id": 365,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "590:27:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
+                      "typeString": "tuple(uint256,uint256,uint256)"
+                    }
+                  },
+                  "functionReturnParameters": 359,
+                  "id": 366,
+                  "nodeType": "Return",
+                  "src": "584:33:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 368,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "GetFishDetails",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 352,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 351,
+                  "name": "fish",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 368,
+                  "src": "493:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 350,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "493:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "492:14:2"
+            },
+            "returnParameters": {
+              "id": 359,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 354,
+                  "name": "_rarity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 368,
+                  "src": "527:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 353,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "527:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 356,
+                  "name": "_weight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 368,
+                  "src": "543:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 355,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "543:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 358,
+                  "name": "_price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 368,
+                  "src": "559:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 357,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "559:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "526:48:2"
+            },
+            "scope": 369,
+            "src": "469:155:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 370,
+        "src": "69:1057:2"
+      }
+    ],
+    "src": "0:1126:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x30c82d14df616a8998696333CFB26afb03F0Ff45",
+      "transactionHash": "0x2bc0c3a261fa15a9c8b2c2753f6628163db8abcdb6504d0c85fd7de450b4d7fe"
+    }
+  },
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2019-08-12T15:28:59.422Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
