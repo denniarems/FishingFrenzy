@@ -49,16 +49,16 @@ export class Web3Service {
           if (Account == null) {
             Account = null;
           }
-          const ContractJSON = require('../../../../build/contracts/FrenzyFish.json');
-          const contractsAddress = ContractJSON.networks['5777'].address;
-          const abi = ContractJSON.abi;
-          const Contract = new window.web3.eth.Contract(abi, contractsAddress);
-          Contract.methods
-            .ListAllFishes()
-            .call()
-            .then(s => {
-              console.log(s);
-            });
+          // const ContractJSON = require('../../../../build/contracts/FrenzyFish.json');
+          // const contractsAddress = ContractJSON.networks['5777'].address;
+          // const abi = ContractJSON.abi;
+          // const Contract = new window.web3.eth.Contract(abi, contractsAddress);
+          // Contract.methods
+          //   .ListAllFishes()
+          //   .call()
+          //   .then(s => {
+          //     console.log(s);
+          //   });
           this.Web3Details$.next({
             account: Account,
             network: Network

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 declare let window: any;
 declare let web3: any;
+declare let require: any;
 
 @Component({
   selector: 'app-play-ground',
