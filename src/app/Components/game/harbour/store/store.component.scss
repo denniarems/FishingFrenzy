@@ -23,10 +23,12 @@
   justify-content: center;
 }
 
-.fish {
+.allfish {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 .example-card {
-  flex-direction: column;
   max-width: 200px;
 }

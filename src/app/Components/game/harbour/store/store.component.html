@@ -1,13 +1,13 @@
 <mat-tab-group dynamicHeight>
   <div class="market">
     <mat-tab label="Fish Store">
-      <div class="fish" *ngFor="let fish of fishAddress">
-        <mat-card class="example-card">
+      <div class="allfish">
+        <mat-card *ngFor="let fish of fishes" class="example-card">
           <mat-card-header> </mat-card-header>
           <img
             mat-card-image
             src="http://wearecodex.com/steem-avatars/avatar-minnow.php?seed={{
-              fish
+              fish.fish
             }}"
             alt="Fish"
           />
@@ -15,16 +15,17 @@
             <div class="properties">
               <mat-grid-list cols="1" rowHeight="30px">
                 <mat-grid-tile>
-                  <p>Rarity : Epic</p>
+                  <p>Rarity : {{ fish.rarity }}</p>
                 </mat-grid-tile>
                 <mat-grid-tile>
-                  <p>Weight : 5</p>
+                  <p>Weight : {{ fish.weight }}</p>
                 </mat-grid-tile>
                 <mat-grid-tile>
-                  <p>Price : 100</p>
+                  <p>Price : {{ fish.price }}</p>
                 </mat-grid-tile>
                 <mat-grid-tile>
                   <button mat-raised-button color="primary">Sell</button>
+                  <button mat-raised-button color="primary">Recharge</button>
                 </mat-grid-tile>
               </mat-grid-list>
             </div>
@@ -32,6 +33,7 @@
         </mat-card>
       </div>
     </mat-tab>
+
     <mat-tab label="FishRod Store">
       <mat-card class="example-card">
         <mat-card-header> </mat-card-header>

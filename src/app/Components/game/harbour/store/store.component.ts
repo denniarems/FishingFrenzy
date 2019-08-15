@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { AppService } from 'src/app/Services/app/app.service';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { FishModel } from 'src/app/Models/fish.model';
 declare let window: any;
 declare let web3: any;
 declare let require: any;
@@ -9,31 +9,49 @@ declare let require: any;
   templateUrl: './store.component.html',
   styleUrls: ['./store.component.scss']
 })
-export class StoreComponent implements OnInit {
-  fishAddress = [];
-  fishData = [];
-  constructor(public appservice: AppService) {}
+export class StoreComponent implements AfterViewInit, OnInit {
+  ContractJSON = require('../../../../../../build/contracts/FrenzyFish.json');
+  contractsAddress = this.ContractJSON.networks['5777'].address;
+  abi = this.ContractJSON.abi;
+  Contract = new window.web3.eth.Contract(this.abi, this.contractsAddress);
+  fishes: FishModel[] = [];
 
-  ngOnInit() {
-    this.appservice.currentFishAddressList.subscribe(address => {
-      this.fishAddress = address;
-    });
-    const ContractJSON = require('../../../../../../build/contracts/FrenzyFish.json');
-    const contractsAddress = ContractJSON.networks['5777'].address;
-    const abi = ContractJSON.abi;
-    const Contract = new window.web3.eth.Contract(abi, contractsAddress);
-    Contract.methods
+  constructor() {
+    let count = 1;
+    this.Contract.methods
       .ListAllFishes()
       .call()
       .then(address => {
-        this.appservice.updateFishAddressList(address);
-
-        Contract.methods
-          .GetFishDetails(this.fishAddress[0])
-          .call()
-          .then(s => {
-            console.log(s);
-          });
+        address.forEach(fishAddress => {
+          this.Contract.methods
+            .GetFishDetails(fishAddress)
+            .call()
+            .then(fish => {
+              this.fishes.push(
+                this.listFish(count, fishAddress, fish)
+              );
+              count++;
+            });
+        });
       });
   }
+
+  ngOnInit() {
+    console.log(this.fishes);
+
+  }
+
+  ngAfterViewInit() {
+}
+
+/** Builds and returns a fish. */
+ listFish(count, fishAddress, fish): FishModel {
+  return {
+    id: count,
+    fish: fishAddress,
+    rarity: fish._rarity,
+    weight: fish._weight,
+    price: fish._price
+  };
+}
 }

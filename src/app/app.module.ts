@@ -16,7 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './Modules/material/material.module';
 import { Web3Service } from './Services/web3/web3.service';
 import { AuthGuard } from './Guards/auth.guard';
-
+import { FormsModule } from '@angular/forms';
+import { JwPaginationComponent } from 'jw-angular-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,9 +31,10 @@ import { AuthGuard } from './Guards/auth.guard';
     HeaderComponent,
     HomeRouteComponent,
     HarbourComponent,
-    GameComponent
+    GameComponent,
+    JwPaginationComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, MaterialModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, MaterialModule],
   providers: [Web3Service, AuthGuard],
   bootstrap: [AppComponent]
 })

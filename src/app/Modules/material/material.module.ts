@@ -12,13 +12,18 @@ import {
   MatCardModule,
   MatGridListModule,
   MatDialogModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatTableModule
 } from '@angular/material';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   imports: [
+    MatPaginatorModule,
+    MatTableModule,
     MatProgressSpinnerModule,
     MatDialogModule,
     MatGridListModule,
@@ -36,6 +41,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatTabsModule
   ],
   exports: [
+    MatPaginatorModule,
+    MatTableModule,
     MatProgressSpinnerModule,
     MatDialogModule,
     MatGridListModule,
