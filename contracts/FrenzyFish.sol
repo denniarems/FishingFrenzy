@@ -8,7 +8,6 @@ contract FrenzyFish is FishRod{
     }
     address[] public Fishes;
     function Fishing() public{
-        
         address newfish = address(new Fish(msg.sender,UsersRod[msg.sender].Level));
         Fishes.push(newfish) - 1;
     }

@@ -5,8 +5,25 @@
         <mat-card *ngFor="let fish of fishes" class="example-card">
           <mat-card-header> </mat-card-header>
           <img
+            *ngIf="fish.rarity == 1"
             mat-card-image
             src="http://wearecodex.com/steem-avatars/avatar-minnow.php?seed={{
+              fish.fish
+            }}"
+            alt="Fish"
+          />
+          <img
+            *ngIf="fish.rarity == 2"
+            mat-card-image
+            src="http://wearecodex.com/steem-avatars/avatar-orca.php?seed={{
+              fish.fish
+            }}"
+            alt="Fish"
+          />
+          <img
+            *ngIf="fish.rarity == 3"
+            mat-card-image
+            src="http://wearecodex.com/steem-avatars/avatar-dolphin.php?seed={{
               fish.fish
             }}"
             alt="Fish"
@@ -15,7 +32,9 @@
             <div class="properties">
               <mat-grid-list cols="1" rowHeight="30px">
                 <mat-grid-tile>
-                  <p>Rarity : {{ fish.rarity }}</p>
+                  <p *ngIf="fish.rarity == 1">Common</p>
+                  <p *ngIf="fish.rarity == 2">Rare</p>
+                  <p *ngIf="fish.rarity == 3">Epic</p>
                 </mat-grid-tile>
                 <mat-grid-tile>
                   <p>Weight : {{ fish.weight }}</p>
@@ -39,23 +58,26 @@
         <mat-card-header> </mat-card-header>
         <img
           mat-card-image
-          src="https://www.google.co.in/imgres?imgurl=https%3A%2F%2Fwww.sneakyfisho.com%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2F1%2Fsmall_image%2F295x295%2F9df78eab33525d08d6e5fb8d27136e95%2F1%2F0%2F10.jpg&imgrefurl=https%3A%2F%2Fwww.sneakyfisho.com%2Frod-and-reel-combos.html&docid=2mUzpituLTHunM&tbnid=FDbyLY54AP1pnM%3A&vet=10ahUKEwighbXbqOTjAhVLtI8KHdwTBAYQMwjdAShPME8..i&w=295&h=295&bih=628&biw=1366&q=fish%20rod&ved=0ahUKEwighbXbqOTjAhVLtI8KHdwTBAYQMwjdAShPME8&iact=mrc&uact=8"
+          src="../../../../../assets/FishingRod.png"
           alt="Fish"
         />
         <mat-card-content>
           <div class="properties">
             <mat-grid-list cols="1" rowHeight="30px">
               <mat-grid-tile>
-                <p>Type : Gold</p>
+                <p>Level :</p>
               </mat-grid-tile>
               <mat-grid-tile>
-                <p>Power : 250</p>
+                <p>Power :</p>
               </mat-grid-tile>
-              <mat-grid-tile> </mat-grid-tile>
               <mat-grid-tile>
-                <button mat-raised-button color="primary">Buy</button>
-                <span style="width: 5px;"></span>
-                <button mat-raised-button color="primary">Upgrade</button>
+                <button
+                  (click)="upgradeFishrod()"
+                  mat-raised-button
+                  color="primary"
+                >
+                  Upgrade
+                </button>
               </mat-grid-tile>
             </mat-grid-list>
           </div>

@@ -17,6 +17,10 @@ export class StoreComponent implements AfterViewInit, OnInit {
   fishes: FishModel[] = [];
 
   constructor() {
+
+  }
+
+  ngOnInit() {
     let count = 1;
     this.Contract.methods
       .ListAllFishes()
@@ -34,12 +38,8 @@ export class StoreComponent implements AfterViewInit, OnInit {
             });
         });
       });
-  }
 
-  ngOnInit() {
-    console.log(this.fishes);
-
-  }
+      }
 
   ngAfterViewInit() {
 }
@@ -54,4 +54,20 @@ export class StoreComponent implements AfterViewInit, OnInit {
     price: fish._price
   };
 }
+ upgradeFishrod() {
+       web3.eth.getAccounts((err, accs) => {
+         this.Contract.methods
+           .UpgradeFishRod()
+           .send({
+             from: accs[0],
+             gas: 3000000
+           })
+           .then(s => {
+             console.log(s);
+           });
+ });
+ }
+
+
+
 }
