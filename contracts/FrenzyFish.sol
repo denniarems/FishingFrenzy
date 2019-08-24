@@ -4,18 +4,18 @@ import './FishRod.sol';
 contract FrenzyFish is FishRod{
 
     constructor () public {
-        FirstUserInitialRod();
     }
-    address[] public Fishes;
+    // address[] public Fishes;
+    mapping (address=>address[]) public Fishes;
     function Fishing() public{
         address newfish = address(new Fish(msg.sender,UsersRod[msg.sender].Level));
-        Fishes.push(newfish) - 1;
+        Fishes[msg.sender].push(newfish);
     }
      function ListAllFishes() public view returns(address[] memory) {
-         return Fishes;
+         return Fishes[msg.sender];
      }
         function GetFishDetails(address fish) public view returns(uint256 _rarity,uint256 _weight,uint256 _price){
-        return( Fish(fish).GetDetails() );
+        return Fish(fish).GetDetails();
     }
 
 

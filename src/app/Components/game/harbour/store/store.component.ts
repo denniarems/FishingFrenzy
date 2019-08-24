@@ -1,3 +1,4 @@
+
 import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { FishModel } from 'src/app/Models/fish.model';
 declare let window: any;
@@ -15,8 +16,9 @@ export class StoreComponent implements AfterViewInit, OnInit {
   abi = this.ContractJSON.abi;
   Contract = new window.web3.eth.Contract(this.abi, this.contractsAddress);
   fishes: FishModel[] = [];
-
+  rod:any
   constructor() {
+
 
   }
 
@@ -26,48 +28,68 @@ export class StoreComponent implements AfterViewInit, OnInit {
       .ListAllFishes()
       .call()
       .then(address => {
+        console.log(address);
         address.forEach(fishAddress => {
           this.Contract.methods
             .GetFishDetails(fishAddress)
             .call()
             .then(fish => {
-              this.fishes.push(
-                this.listFish(count, fishAddress, fish)
-              );
+              this.fishes.push(this.listFish(count, fishAddress, fish));
               count++;
             });
+          console.log(this.fishes);
         });
       });
+      this.Contract.methods
+      .GetRodDetails()
+      .call()
+      .then(rodData => {
+        console.log(rodData);
+        this.rod=rodData;
+      });
+  }
 
-      }
+  ngAfterViewInit() {}
 
-  ngAfterViewInit() {
-}
+  /** Builds and returns a fish. */
+  listFish(count, fishAddress, fish): FishModel {
+    return {
+      id: count,
+      fish: fishAddress,
+      rarity: fish._rarity,
+      weight: fish._weight,
+      price: fish._price
+    };
+  }
 
-/** Builds and returns a fish. */
- listFish(count, fishAddress, fish): FishModel {
-  return {
-    id: count,
-    fish: fishAddress,
-    rarity: fish._rarity,
-    weight: fish._weight,
-    price: fish._price
-  };
-}
- upgradeFishrod() {
-       web3.eth.getAccounts((err, accs) => {
-         this.Contract.methods
-           .UpgradeFishRod()
-           .send({
-             from: accs[0],
-             gas: 3000000
-           })
-           .then(s => {
-             console.log(s);
-           });
- });
- }
-
-
-
+  firstFishRod() {
+    web3.eth.getAccounts((err, accs) => {
+      this.Contract.methods
+        .FirstUserInitialRod()
+        .send({
+          from: accs[0],
+          gas: 3000000
+        })
+        .then(bool => {
+          this.Contract.methods
+            .GetRodDetails()
+            .call()
+            .then(data => console.log(data));
+          console.log('rod initialised', bool);
+        });
+    });
+  }
+  upgradeFishrod() {
+    web3.eth.getAccounts((err, accs) => {
+      this.Contract.methods
+        .UpgradeFishRod()
+        .send({
+          from: accs[0],
+          gas: 3000000
+        })
+        .then(s => {
+          console.log(s);
+        });
+    });
+  }
 }

@@ -12,11 +12,12 @@ contract Fish  {
         uint256 Price;
     }
     FishModel public ThisFish;
+    // mapping (address=>FishModel) ThisFish;
     constructor(address _owner,uint256 _fishRodLevel) public   {
-    ThisFish.Owner = _owner;
-    ThisFish.Rarity = Rarity();
-    ThisFish.Weight = Weight(_fishRodLevel);
-    ThisFish.Price = Price(ThisFish.Weight,ThisFish.Rarity);
+        ThisFish.Owner = _owner;
+        ThisFish.Rarity = Rarity();
+        ThisFish.Weight = Weight(_fishRodLevel);
+        ThisFish.Price = Price(ThisFish.Weight,ThisFish.Rarity);
     }
 
     function Rarity() public view returns(uint256)  {
@@ -30,7 +31,7 @@ contract Fish  {
         }
     }
     function Weight(uint256 _fishRodLevel) public view returns(uint256)  {
-        return _fishRodLevel.add(now.mod(_fishRodLevel*3)-1);
+        return _fishRodLevel.add(now.mod((_fishRodLevel*3)-1));
     }
     function Price( uint256 _weight, uint256 _rarity) public pure returns(uint256) {
         return _weight.mul(_rarity);

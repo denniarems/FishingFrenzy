@@ -5,3 +5,4 @@ export interface FishModel {
   weight: number;
   price: number;
 }
+

@@ -1,4 +1,4 @@
-<mat-tab-group dynamicHeight>
+<mat-tab-group dynamicHeight mat-align-tabs="center" animationDuration="2000ms">
   <div class="market">
     <mat-tab label="Fish Store">
       <div class="allfish">
@@ -59,24 +59,31 @@
         <img
           mat-card-image
           src="../../../../../assets/FishingRod.png"
-          alt="Fish"
+          alt="FishRod"
         />
         <mat-card-content>
           <div class="properties">
             <mat-grid-list cols="1" rowHeight="30px">
               <mat-grid-tile>
-                <p>Level :</p>
+                <p>Level : {{rod._level}}</p>
               </mat-grid-tile>
               <mat-grid-tile>
-                <p>Power :</p>
+                <p>Power : {{rod._power}}</p>
               </mat-grid-tile>
               <mat-grid-tile>
+                <button 
+                  (click)="firstFishRod()"
+                  mat-raised-button
+                  color="primary"
+                >
+                  Initial
+                </button>
                 <button
                   (click)="upgradeFishrod()"
                   mat-raised-button
                   color="primary"
                 >
-                  Upgrade
+                  Upgrade {{rod._price}}
                 </button>
               </mat-grid-tile>
             </mat-grid-list>

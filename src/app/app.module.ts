@@ -17,7 +17,7 @@ import { MaterialModule } from './Modules/material/material.module';
 import { Web3Service } from './Services/web3/web3.service';
 import { AuthGuard } from './Guards/auth.guard';
 import { FormsModule } from '@angular/forms';
-import { JwPaginationComponent } from 'jw-angular-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +32,6 @@ import { JwPaginationComponent } from 'jw-angular-pagination';
     HomeRouteComponent,
     HarbourComponent,
     GameComponent,
-    JwPaginationComponent
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, MaterialModule],
   providers: [Web3Service, AuthGuard],
