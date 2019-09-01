@@ -1,3 +1,4 @@
+import { AppService } from './../../../../Services/app/app.service';
 
 import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { FishModel } from 'src/app/Models/fish.model';
@@ -11,16 +12,14 @@ declare let require: any;
   styleUrls: ['./store.component.scss']
 })
 export class StoreComponent implements AfterViewInit, OnInit {
-  ContractJSON = require('../../../../../../build/contracts/FrenzyFish.json');
-  contractsAddress = this.ContractJSON.networks['5777'].address;
-  abi = this.ContractJSON.abi;
-  Contract = new window.web3.eth.Contract(this.abi, this.contractsAddress);
-  fishes: FishModel[] = [];
-  rod:any
-  constructor() {
+
+  constructor( private _appService: AppService) {
 
 
   }
+  Contract = this._appService.getFrenzyFishContract();
+  fishes: FishModel[] = [];
+  rod: any;
 
   ngOnInit() {
     let count = 1;
@@ -40,12 +39,12 @@ export class StoreComponent implements AfterViewInit, OnInit {
           console.log(this.fishes);
         });
       });
-      this.Contract.methods
-      .GetRodDetails()
-      .call()
-      .then(rodData => {
+    this.Contract.methods
+        .GetRodDetails()
+       .call()
+       .then((rodData: any) => {
         console.log(rodData);
-        this.rod=rodData;
+        this.rod = rodData;
       });
   }
 
@@ -64,6 +63,8 @@ export class StoreComponent implements AfterViewInit, OnInit {
 
   firstFishRod() {
     web3.eth.getAccounts((err, accs) => {
+      console.log(accs);
+      console.log(accs);
       this.Contract.methods
         .FirstUserInitialRod()
         .send({

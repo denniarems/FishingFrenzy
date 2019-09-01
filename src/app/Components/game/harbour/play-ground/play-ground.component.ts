@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'src/app/Services/app/app.service';
 declare let window: any;
 declare let web3: any;
 declare let require: any;
@@ -9,16 +10,17 @@ declare let require: any;
   styleUrls: ['./play-ground.component.scss']
 })
 export class PlayGroundComponent implements OnInit {
-  constructor() {}
+  constructor( private _appService: AppService) {
+
+
+  }
+  Contract = this._appService.getFrenzyFishContract();
 
   ngOnInit() {}
   play = () => {
-    const ContractJSON = require('../../../../../../build/contracts/FrenzyFish.json');
-    const contractsAddress = ContractJSON.networks['5777'].address;
-    const abi = ContractJSON.abi;
-    const Contract = new window.web3.eth.Contract(abi, contractsAddress);
+
     web3.eth.getAccounts((err, accs) => {
-      Contract.methods
+      this.Contract.methods
         .Fishing()
         .send({
           from: accs[0],
