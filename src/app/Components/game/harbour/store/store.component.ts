@@ -63,8 +63,6 @@ export class StoreComponent implements AfterViewInit, OnInit {
 
   firstFishRod() {
     web3.eth.getAccounts((err, accs) => {
-      console.log(accs);
-      console.log(accs);
       this.Contract.methods
         .FirstUserInitialRod()
         .send({

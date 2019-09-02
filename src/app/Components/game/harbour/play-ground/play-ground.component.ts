@@ -19,11 +19,11 @@ export class PlayGroundComponent implements OnInit {
   ngOnInit() {}
   play = () => {
 
-    web3.eth.getAccounts((err, accs) => {
+    web3.eth.getAccounts((err, account) => {
       this.Contract.methods
         .Fishing()
         .send({
-          from: accs[0],
+          from: account[0],
           gas: 3000000
         })
         .then(s => {

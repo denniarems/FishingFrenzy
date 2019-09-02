@@ -1992,12 +1992,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xE6292503AdaBDd90508F1d4F681f5d6f3d3EeD7d",
-      "transactionHash": "0xe693af36bc084a95dcd5d3108f2a39360ce8bf052ea67a1b917398a60e319091"
+      "address": "0xd8160EEF7254Ae75B1E2dfbC27dAD268E488c1BD",
+      "transactionHash": "0x24e6ce01d4d3ede558224f7107e61e0d90536ff4fcceaf279963ee61ba0a944c"
     }
   },
   "schemaVersion": "3.0.13",
-  "updatedAt": "2019-09-01T19:55:29.476Z",
+  "updatedAt": "2019-09-02T14:00:20.356Z",
   "devdoc": {
     "methods": {}
   },
