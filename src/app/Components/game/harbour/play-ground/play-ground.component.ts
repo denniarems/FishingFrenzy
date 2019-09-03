@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/Services/app/app.service';
 import { FishModel } from 'src/app/Models/fish.model';
-import { count } from 'console';
 import { FishService } from 'src/app/Services/fish/fish.service';
 declare let window: any;
 declare let web3: any;
@@ -14,7 +13,7 @@ declare let require: any;
 })
 export class PlayGroundComponent implements OnInit {
   account: any;
-  newFish: FishModel[] = [];
+  newFish: any;
   constructor( 
     private _appService: AppService,
     private _fishService: FishService
