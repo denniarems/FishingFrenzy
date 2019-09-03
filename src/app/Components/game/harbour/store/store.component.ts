@@ -19,19 +19,15 @@ export class StoreComponent implements AfterViewInit, OnInit {
   tempf: FishModel[] = [];
   account: any;
   ngOnInit() {
-    this._appService.currentAccount.subscribe(accs=>{
+    this._appService.currentAccount.subscribe(accs => {
       this.account = accs;
-      console.log(this.account);
-      
-    })
+    });
     this._appService.currentFishStoreList.subscribe(fish => {
       this.fishes = [];
       this.fishes = fish;
     });
-
     this.Contract = this._appService.getFrenzyFishContract();
     let count = 1;
-    
     this.Contract.methods
       .ListAllFishes()
       .call({from: this.account})
@@ -49,15 +45,14 @@ export class StoreComponent implements AfterViewInit, OnInit {
         });
         this._appService.updateFishStoreList(this.tempf);
       });
-    web3.eth.getAccounts((err, accs) => {
-        this.Contract.methods
+    this.Contract.methods
         .GetRodDetails()
-       .call({from: accs[0]})
+       .call({from: this.account})
        .then((rodData: any) => {
         console.log(rodData);
         this.rod = rodData;
       });
-    });
+
   }
 
   ngAfterViewInit() {}
@@ -74,11 +69,10 @@ export class StoreComponent implements AfterViewInit, OnInit {
   }
 
   firstFishRod() {
-    web3.eth.getAccounts((err, accs) => {
       this.Contract.methods
         .FirstUserInitialRod()
         .send({
-          from: accs[0],
+          from: this.account,
           gas: 3000000
         })
         .then(bool => {
@@ -88,19 +82,19 @@ export class StoreComponent implements AfterViewInit, OnInit {
             .then(data => console.log(data));
           console.log('rod initialised', bool);
         });
-    });
+
   }
   upgradeFishrod() {
-    web3.eth.getAccounts((err, accs) => {
+
       this.Contract.methods
         .UpgradeFishRod()
         .send({
-          from: accs[0],
+          from: this.account,
           gas: 3000000
         })
         .then(s => {
           console.log(s);
         });
-    });
+
   }
 }

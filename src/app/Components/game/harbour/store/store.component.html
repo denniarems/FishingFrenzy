@@ -71,14 +71,14 @@
                 <p>Power : {{rod._power}}</p>
               </mat-grid-tile>
               <mat-grid-tile>
-                <button 
+                <button *ngIf="rod._level==0"
                   (click)="firstFishRod()"
                   mat-raised-button
                   color="primary"
                 >
                   Initial
                 </button>
-                <button
+                <button *ngIf="rod._level!=0"
                   (click)="upgradeFishrod()"
                   mat-raised-button
                   color="primary"

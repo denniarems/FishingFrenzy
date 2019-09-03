@@ -18,7 +18,6 @@ export class PlayGroundComponent implements OnInit {
 
   ngOnInit() {}
   play = () => {
-
     web3.eth.getAccounts((err, account) => {
       this.Contract.methods
         .Fishing()
