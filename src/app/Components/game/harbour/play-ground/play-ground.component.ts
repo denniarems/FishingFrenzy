@@ -13,7 +13,13 @@ declare let require: any;
 })
 export class PlayGroundComponent implements OnInit {
   account: any;
-  newFish: any;
+  newFish: FishModel = {
+    id: 0,
+    fish: 'Coming Soon',
+    rarity: 'soon',
+    weight: 0,
+    price: 0
+  };
   constructor( 
     private _appService: AppService,
     private _fishService: FishService
