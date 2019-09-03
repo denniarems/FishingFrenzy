@@ -1,11 +1,9 @@
 import { AppService } from './../../../../Services/app/app.service';
-
 import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { FishModel } from 'src/app/Models/fish.model';
 declare let window: any;
 declare let web3: any;
 declare let require: any;
-
 @Component({
   selector: 'app-store',
   templateUrl: './store.component.html',
@@ -14,38 +12,52 @@ declare let require: any;
 export class StoreComponent implements AfterViewInit, OnInit {
 
   constructor( private _appService: AppService) {
-
-
   }
-  Contract = this._appService.getFrenzyFishContract();
+  Contract: any;
   fishes: FishModel[] = [];
-  rod: any;
-
+  rod: any = [];
+  tempf: FishModel[] = [];
+  account: any;
   ngOnInit() {
+    this._appService.currentAccount.subscribe(accs=>{
+      this.account = accs;
+      console.log(this.account);
+      
+    })
+    this._appService.currentFishStoreList.subscribe(fish => {
+      this.fishes = [];
+      this.fishes = fish;
+    });
+
+    this.Contract = this._appService.getFrenzyFishContract();
     let count = 1;
+    
     this.Contract.methods
       .ListAllFishes()
-      .call()
+      .call({from: this.account})
       .then(address => {
         console.log(address);
         address.forEach(fishAddress => {
           this.Contract.methods
             .GetFishDetails(fishAddress)
-            .call()
+            .call({from: this.account})
             .then(fish => {
-              this.fishes.push(this.listFish(count, fishAddress, fish));
+              this.tempf[count - 1] = this.listFish(count, fishAddress, fish);
               count++;
-            });
-          console.log(this.fishes);
+            }
+            );
         });
+        this._appService.updateFishStoreList(this.tempf);
       });
-    this.Contract.methods
+    web3.eth.getAccounts((err, accs) => {
+        this.Contract.methods
         .GetRodDetails()
-       .call()
+       .call({from: accs[0]})
        .then((rodData: any) => {
         console.log(rodData);
         this.rod = rodData;
       });
+    });
   }
 
   ngAfterViewInit() {}

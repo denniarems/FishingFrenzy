@@ -1,3 +1,4 @@
+import { AppService } from 'src/app/Services/app/app.service';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, interval, Subscription } from 'rxjs';
 import { Web3Model } from '../../Models/web3.model';
@@ -12,7 +13,7 @@ declare let web3: any;
   providedIn: 'root'
 })
 export class Web3Service {
-  constructor() {}
+  constructor( private _appService: AppService) {}
   public Web3Details$: BehaviorSubject<Web3Model> = new BehaviorSubject<
     Web3Model
   >({
@@ -92,6 +93,7 @@ export class Web3Service {
             'Couldn\'t get any accounts! Make sure your Ethereum client is configured correctly.'
           );
         } else {
+          this._appService.updateAccount(accs[0]);
           resolve(accs[0]);
         }
       });

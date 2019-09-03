@@ -8,18 +8,18 @@ declare const web3: any;
   providedIn: 'root'
 })
 export class AppService {
-  private fishAddressList = new BehaviorSubject([]);
-  private fishDataList = new BehaviorSubject([]);
+  private fishStoreList = new BehaviorSubject([]);
+  private account = new BehaviorSubject([]);
 
-  currentFishAddressList = this.fishAddressList.asObservable();
-  currentFishDataList = this.fishDataList.asObservable();
+  currentFishStoreList = this.fishStoreList.asObservable();
+  currentAccount = this.account.asObservable();
 
-  updateFishAddressList(data: any) {
-    this.fishAddressList.next(data);
+
+  updateFishStoreList(data: any) {
+    this.fishStoreList.next(data);
   }
-
-  updateFishDataList(data: any) {
-    this.fishDataList.next(data);
+  updateAccount(data: any) {
+    this.account.next(data);
   }
 
   getFrenzyFishContract(){
@@ -29,6 +29,8 @@ export class AppService {
    const Contract = new window.web3.eth.Contract(abi, contractsAddress);
    return Contract;
   }
+
+
 
   constructor() {}
 }
