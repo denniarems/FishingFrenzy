@@ -24,6 +24,7 @@ export class StoreComponent implements  OnInit {
 
 
   ngOnInit() {
+    this.Contract = this._appService.getFrenzyFishContract();
     this._appService.currentAccount.subscribe(accs => {
       this.account = accs;
     });
@@ -31,13 +32,16 @@ export class StoreComponent implements  OnInit {
       this.fishes = [];
       this.fishes = fish;
     });
-    this.Contract = this._appService.getFrenzyFishContract();
+    this.listingFishData();
+    this.listingRodDta();
+  }
+
+  listingFishData = () => {
     let count = 1;
     this.Contract.methods
       .ListAllFishes()
       .call({from: this.account})
       .then(address => {
-        console.log(address);
         address.forEach(fishAddress => {
           this.Contract.methods
             .GetFishDetails(fishAddress)
@@ -50,28 +54,24 @@ export class StoreComponent implements  OnInit {
         });
         this._appService.updateFishStoreList(this.tempf);
       });
-    this.Contract.methods
-        .GetRodDetails()
-       .call({from: this.account})
-       .then((rodData: any) => {
-        console.log(rodData);
-        this.rod = rodData;
-      });
-
   }
-  firstFishRod() {
+  listingRodDta = () => {
+    this.Contract.methods
+    .GetRodDetails()
+   .call({from: this.account})
+   .then((rodData: any) => {
+    this.rod = rodData;
+  });
+  }
+  firstFishRod = () => {
       this.Contract.methods
         .FirstUserInitialRod()
         .send({
           from: this.account,
           gas: 3000000
         })
-        .then(bool => {
-          this.Contract.methods
-            .GetRodDetails()
-            .call()
-            .then(data => console.log(data));
-          console.log('rod initialised', bool);
+        .then(() => {
+          this.listingRodDta();
         });
   }
   upgradeFishrod() {
@@ -81,8 +81,8 @@ export class StoreComponent implements  OnInit {
           from: this.account,
           gas: 3000000
         })
-        .then(s => {
-          console.log(s);
+        .then(() => {
+          this.listingRodDta();
         });
 
   }

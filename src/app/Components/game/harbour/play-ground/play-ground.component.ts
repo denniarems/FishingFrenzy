@@ -15,7 +15,10 @@ declare let require: any;
 export class PlayGroundComponent implements OnInit {
   account: any;
   newFish: FishModel[] = [];
-  constructor( private _appService: AppService,private _fishService: FishService) {
+  constructor( 
+    private _appService: AppService,
+    private _fishService: FishService
+    ) {
   }
   Contract = this._appService.getFrenzyFishContract();
 
