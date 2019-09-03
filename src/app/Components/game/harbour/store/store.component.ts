@@ -1,3 +1,4 @@
+import { FishService } from './../../../../Services/fish/fish.service';
 import { AppService } from './../../../../Services/app/app.service';
 import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { FishModel } from 'src/app/Models/fish.model';
@@ -9,15 +10,19 @@ declare let require: any;
   templateUrl: './store.component.html',
   styleUrls: ['./store.component.scss']
 })
-export class StoreComponent implements AfterViewInit, OnInit {
+export class StoreComponent implements  OnInit {
 
-  constructor( private _appService: AppService) {
-  }
   Contract: any;
   fishes: FishModel[] = [];
   rod: any = [];
   tempf: FishModel[] = [];
   account: any;
+  constructor( 
+    private _appService: AppService,
+    private _fishService: FishService) {
+  }
+
+
   ngOnInit() {
     this._appService.currentAccount.subscribe(accs => {
       this.account = accs;
@@ -38,7 +43,7 @@ export class StoreComponent implements AfterViewInit, OnInit {
             .GetFishDetails(fishAddress)
             .call({from: this.account})
             .then(fish => {
-              this.tempf[count - 1] = this.listFish(count, fishAddress, fish);
+              this.tempf[count - 1] = this._fishService.listFish(count, fishAddress, fish);
               count++;
             }
             );
@@ -54,20 +59,6 @@ export class StoreComponent implements AfterViewInit, OnInit {
       });
 
   }
-
-  ngAfterViewInit() {}
-
-  /** Builds and returns a fish. */
-  listFish(count, fishAddress, fish): FishModel {
-    return {
-      id: count,
-      fish: fishAddress,
-      rarity: fish._rarity,
-      weight: fish._weight,
-      price: fish._price
-    };
-  }
-
   firstFishRod() {
       this.Contract.methods
         .FirstUserInitialRod()
@@ -82,10 +73,8 @@ export class StoreComponent implements AfterViewInit, OnInit {
             .then(data => console.log(data));
           console.log('rod initialised', bool);
         });
-
   }
   upgradeFishrod() {
-
       this.Contract.methods
         .UpgradeFishRod()
         .send({

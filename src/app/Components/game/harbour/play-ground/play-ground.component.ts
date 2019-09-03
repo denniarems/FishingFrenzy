@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/Services/app/app.service';
+import { FishModel } from 'src/app/Models/fish.model';
+import { count } from 'console';
+import { FishService } from 'src/app/Services/fish/fish.service';
 declare let window: any;
 declare let web3: any;
 declare let require: any;
@@ -10,24 +13,41 @@ declare let require: any;
   styleUrls: ['./play-ground.component.scss']
 })
 export class PlayGroundComponent implements OnInit {
-  constructor( private _appService: AppService) {
-
-
+  account: any;
+  newFish: FishModel[] = [];
+  constructor( private _appService: AppService,private _fishService: FishService) {
   }
   Contract = this._appService.getFrenzyFishContract();
 
-  ngOnInit() {}
+  ngOnInit() {
+    this._appService.currentAccount.subscribe(accs => {
+      this.account = accs;
+      this.listNewFish();
+    });
+  }
   play = () => {
-    web3.eth.getAccounts((err, account) => {
       this.Contract.methods
         .Fishing()
         .send({
-          from: account[0],
+          from: this.account,
           gas: 3000000
         })
-        .then(s => {
-          console.log(s);
+        .then(() => {
+          this.listNewFish();
         });
-    });
+  }
+  listNewFish = () => {
+    this.Contract.methods
+    .ListAllFishes()
+    .call({from: this.account})
+    .then(address => {
+      this.Contract.methods
+      .GetFishDetails(address[address.length - 1])
+      .call({from: this.account})
+      .then(fish => {
+      this.newFish = this._fishService.listFish(address.length - 1, address[address.length - 1], fish);
+    }
+    );
+});
   }
 }

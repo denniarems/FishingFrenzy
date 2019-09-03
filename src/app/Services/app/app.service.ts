@@ -22,6 +22,7 @@ export class AppService {
     this.account.next(data);
   }
 
+
   getFrenzyFishContract(){
    const ContractJSON = require('../../../../truffle/build/contracts/FrenzyFish.json');
    const contractsAddress = ContractJSON.networks['5777'].address;
