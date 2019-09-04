@@ -1,6 +1,8 @@
-import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
-import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { Component, OnInit } from '@angular/core';
+
 import { AppService } from 'src/app/Services/app/app.service';
+import { FishModel } from 'src/app/Models/fish.model';
+import { FishService } from 'src/app/Services/fish/fish.service';
 
 
 
@@ -9,65 +11,79 @@ import { AppService } from 'src/app/Services/app/app.service';
   templateUrl: './market.component.html',
   styleUrls: ['./market.component.scss']
 })
-export class MarketComponent {
-  displayedColumns = ['id', 'name', 'progress', 'color'];
-  dataSource: MatTableDataSource<UserData>;
-
-  @ViewChild(MatPaginator, null) paginator: MatPaginator;
-  @ViewChild(MatSort, null) sort: MatSort;
-
-  constructor() {
-    // Create 100 users
-    const users: UserData[] = [];
-    for (let i = 1; i <= 100; i++) { users.push(createNewUser(i)); }
-
-    // Assign the data to the data source for the table to render
-    console.log(users);
-    
-    this.dataSource = new MatTableDataSource(users);
+export class MarketComponent implements OnInit{
+  Contract: any;
+  fishes: FishModel[] = [];
+  rod: any = [];
+  tempf: FishModel[] = [];
+  account: any;
+  constructor( 
+    private _appService: AppService,
+    private _fishService: FishService) {
   }
 
-  /**
-   * Set the paginator and sort after the view init since this component will
-   * be able to query its view for the initialized paginator and sort.
-   */
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+
+  ngOnInit() {
+    this.Contract = this._appService.getFrenzyFishContract();
+    this._appService.currentAccount.subscribe(accs => {
+      this.account = accs;
+    });
+    this._appService.currentFishStoreList.subscribe(fish => {
+      this.fishes = [];
+      this.fishes = fish;
+    });
+    this.listingFishData();
+    this.listingRodDta();
   }
 
-  applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
-    this.dataSource.filter = filterValue;
+  listingFishData = () => {
+    let count = 1;
+    this.Contract.methods
+      .ListAllFishes()
+      .call({from: this.account})
+      .then(address => {
+        address.forEach(fishAddress => {
+          this.Contract.methods
+            .GetFishDetails(fishAddress)
+            .call({from: this.account})
+            .then(fish => {
+              this.tempf[count - 1] = this._fishService.listFish(count, fishAddress, fish);
+              count++;
+            }
+            );
+        });
+        this._appService.updateFishStoreList(this.tempf);
+      });
+  }
+  listingRodDta = () => {
+    this.Contract.methods
+    .GetRodDetails()
+   .call({from: this.account})
+   .then((rodData: any) => {
+    this.rod = rodData;
+  });
+  }
+  firstFishRod = () => {
+      this.Contract.methods
+        .FirstUserInitialRod()
+        .send({
+          from: this.account,
+          gas: 3000000
+        })
+        .then(() => {
+          this.listingRodDta();
+        });
+  }
+  upgradeFishrod() {
+      this.Contract.methods
+        .UpgradeFishRod()
+        .send({
+          from: this.account,
+          gas: 3000000
+        })
+        .then(() => {
+          this.listingRodDta();
+        });
+
   }
 }
-
-/** Builds and returns a new User. */
-function createNewUser(id: number): UserData {
-  const name =
-      NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-      NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
-
-  return {
-    id: id.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-  };
-}
-
-/** Constants used to fill up our data base. */
-const COLORS = ['maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple',
-  'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
-const NAMES = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
-  'Charlotte', 'Theodore', 'Isla', 'Oliver', 'Isabella', 'Jasper',
-  'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'];
-
-export interface UserData {
-  id: string;
-  name: string;
-  progress: string;
-  color: string;
-}
-

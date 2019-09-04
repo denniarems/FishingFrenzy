@@ -1,12 +1,12 @@
 pragma solidity ^0.5.0;
 import './Fish.sol';
 import './FishRod.sol';
-contract FrenzyFish is FishRod{
+import './Market.sol';
+contract FrenzyFish is FishRod,Market{
 
     constructor () public {
     }
     // address[] public Fishes;
-    mapping (address=>address[]) public Fishes;
     function Fishing() public{
         address newfish = address(new Fish(msg.sender,UsersRod[msg.sender].Level));
         Fishes[msg.sender].push(newfish);
