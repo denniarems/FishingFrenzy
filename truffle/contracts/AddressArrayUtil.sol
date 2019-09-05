@@ -24,8 +24,16 @@ function IndexOf(address[] memory self, address value) internal pure returns(uin
   }
 
   /** Removes the value at the given index in an array. */
-  function RemoveByIndex(address[] memory self,uint256 index) internal pure {
-   delete self[index];
+  // function RemoveByIndex(address[] memory self,uint256 index) internal pure {
+  //  delete self[index];
+  // }
+  function RemoveByIndex(address[] storage self,uint256 index) internal {
+    for (uint256 i = index; i < self.length-1; i++) {
+      self[i] = self[i+1];
+    }
+    delete self[self.length-1];
+    self.length--;
+    // return self;
   }
 
 }

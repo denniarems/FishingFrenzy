@@ -2,8 +2,10 @@ pragma solidity ^0.5.0;
 import './Fish.sol';
 import './FishRod.sol';
 import './SafeMath.sol';
+// import './AddressArrayUtil.sol';
 contract Market {
     using SafeMath for uint256;
+    // using AddressArrayUtil for address;
     struct MarketOrders{
         address SellFish;
         address payable Seller;
@@ -38,7 +40,19 @@ contract Market {
             return true;
         } else return false;
     }
-
+    function BuyFish (address  _fish,uint256 _orderPosition) public returns(bool) {
+        require(SellOrders[_orderPosition].SellFish==_fish && Fish(_fish).GetOrderStatus() == true,"Not in OrderList");
+        require(SellOrders[_orderPosition].Seller != msg.sender,"Owner Can't Buy");
+        require(SellOrders[_orderPosition].IsFilled == false,"Order Already Filled");
+        SellOrders[_orderPosition].Buyer==msg.sender;
+        if (Fish(_fish).ChangeOwnerShip(msg.sender)) {
+            Fishes[msg.sender].push(_fish);
+            delete Fishes[SellOrders[_orderPosition].Seller][SellOrders[_orderPosition].OwnerFishPosition];
+            return true;
+        } else {
+            return false;
+        }
+    }
     function ListMarketOrders() public view returns(address[] memory  ,address[] memory,address[] memory,uint256[] memory,bool[] memory) {
         uint256 length = SellOrders.length;
         address[] memory _SellFish = new address[](length);

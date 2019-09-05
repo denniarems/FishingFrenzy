@@ -50,5 +50,9 @@ contract Fish  {
         ThisFish.OnOrder=!ThisFish.OnOrder;
         return(ThisFish.OnOrder);
     }
+    function ChangeOwnerShip(address newOwner) external returns(bool){
+        ThisFish.Owner = newOwner;
+        return true;
+    }
 
     }
