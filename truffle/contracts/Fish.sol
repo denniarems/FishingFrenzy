@@ -10,6 +10,7 @@ contract Fish  {
         uint256 Weight;
         address Owner;
         uint256 Price;
+        bool OnOrder;
     }
     FishModel public ThisFish;
     // mapping (address=>FishModel) ThisFish;
@@ -18,6 +19,7 @@ contract Fish  {
         ThisFish.Rarity = Rarity();
         ThisFish.Weight = Weight(_fishRodLevel);
         ThisFish.Price = Price(ThisFish.Weight,ThisFish.Rarity);
+        ThisFish.OnOrder = false;
     }
 
     function Rarity() public view returns(uint256)  {
@@ -36,8 +38,15 @@ contract Fish  {
     function Price( uint256 _weight, uint256 _rarity) public pure returns(uint256) {
         return _weight.mul(_rarity);
     }
-    function GetDetails() public view returns(uint256,uint256,uint256){
-        return(ThisFish.Rarity,ThisFish.Weight,ThisFish.Price);
+    function GetDetails() public view returns(uint256,uint256,uint256,bool){
+        return(ThisFish.Rarity,ThisFish.Weight,ThisFish.Price,ThisFish.OnOrder);
+    }
+    function GetOrderStatus() public view returns(bool){
+        return(ThisFish.OnOrder);
+    }
+    function ChangeOrderStatus() public returns(bool){
+        ThisFish.OnOrder=!ThisFish.OnOrder;
+        return(ThisFish.OnOrder);
     }
 
     }

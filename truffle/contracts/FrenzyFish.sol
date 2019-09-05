@@ -14,7 +14,7 @@ contract FrenzyFish is FishRod,Market{
      function ListAllFishes() public view returns(address[] memory) {
          return Fishes[msg.sender];
      }
-        function GetFishDetails(address fish) public view returns(uint256 _rarity,uint256 _weight,uint256 _price){
+        function GetFishDetails(address fish) public view returns(uint256 _rarity,uint256 _weight,uint256 _price,bool _onOrder){
         return Fish(fish).GetDetails();
     }
 
