@@ -10,6 +10,7 @@ contract Fish  {
         uint256 Weight;
         address Owner;
         uint256 Price;
+        // uint256 Position;
         bool OnOrder;
     }
     FishModel public ThisFish;
@@ -19,6 +20,7 @@ contract Fish  {
         ThisFish.Rarity = Rarity();
         ThisFish.Weight = Weight(_fishRodLevel);
         ThisFish.Price = Price(ThisFish.Weight,ThisFish.Rarity);
+        // ThisFish.Position = 0;
         ThisFish.OnOrder = false;
     }
 
