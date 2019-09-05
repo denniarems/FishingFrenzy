@@ -1,5 +1,5 @@
 const json=artifacts.require("FrenzyFish");
-let accounts,fishfrenzy,management,contractBalance;
+let accounts,fishfrenzy,management,ff;
 const interface=json['abi'];
 const bytecode=json['bytecode'];
 const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
@@ -17,7 +17,7 @@ fishfrenzy=await web3.eth.Contract(interface)
 
 contract('FrenzyFish',()=>{
     it ('deploys a contract',()=>{
-        const fishaddress=await sms.option.address;
+        const fishaddress=await ff.option.address;
         assert.ok(fishaddress, "[test fail]");
 
     });
