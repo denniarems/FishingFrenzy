@@ -10,7 +10,7 @@ contract Market {
         address SellFish;
         address payable Seller;
         uint256 OwnerFishPosition;
-        address Buyer;
+        // address Buyer;
         bool IsFilled;
     }
     MarketOrders[] public SellOrders;
@@ -44,30 +44,28 @@ contract Market {
         require(SellOrders[_orderPosition].SellFish==_fish && Fish(_fish).GetOrderStatus() == true,"Not in OrderList");
         require(SellOrders[_orderPosition].Seller != msg.sender,"Owner Can't Buy");
         require(SellOrders[_orderPosition].IsFilled == false,"Order Already Filled");
-        SellOrders[_orderPosition].Buyer==msg.sender;
         if (Fish(_fish).ChangeOwnerShip(msg.sender)) {
             Fishes[msg.sender].push(_fish);
             delete Fishes[SellOrders[_orderPosition].Seller][SellOrders[_orderPosition].OwnerFishPosition];
+            delete SellOrders[_orderPosition];
             return true;
         } else {
             return false;
         }
     }
-    function ListMarketOrders() public view returns(address[] memory  ,address[] memory,address[] memory,uint256[] memory,bool[] memory) {
+    function ListMarketOrders() public view returns(address[] memory ,address[] memory,uint256[] memory,bool[] memory) {
         uint256 length = SellOrders.length;
         address[] memory _SellFish = new address[](length);
         address[] memory _Seller = new address[](length);
-        address[] memory _Buyer = new address[](length);
         uint256[] memory _OwnerFishPosition = new uint256[](length);
         bool[] memory _IsFilled = new bool[](length);
         for(uint256 i = 0;i < SellOrders.length; i++){
         _SellFish[i] = SellOrders[i].SellFish;
         _Seller[i] = SellOrders[i].Seller;
-        _Buyer[i] = SellOrders[i].Buyer;
         _OwnerFishPosition[i] = SellOrders[i].OwnerFishPosition;
         _IsFilled[i] = SellOrders[i].IsFilled;
         }
-        return (_SellFish,_Seller,_Buyer,_OwnerFishPosition,_IsFilled);
+        return (_SellFish,_Seller,_OwnerFishPosition,_IsFilled);
     }
 
 }

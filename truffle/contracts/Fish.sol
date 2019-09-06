@@ -52,6 +52,7 @@ contract Fish  {
     }
     function ChangeOwnerShip(address newOwner) external returns(bool){
         ThisFish.Owner = newOwner;
+        ChangeOrderStatus();
         return true;
     }
 
