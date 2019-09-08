@@ -46,11 +46,14 @@ export class MarketComponent implements OnInit{
     .ListMarketOrders()
     .call({from: this.account})
     .then(Orders => {
-      this.BuyOrderFishes =  this._fishService.listOrders(Orders,this.listingMyOrders());
+      console.log(Object.keys(this.listingMyOrders()).length);
+      
+      this.BuyOrderFishes =  this._fishService.listOrders(Orders, this.listingMyOrders());
       });
   }
   listingMyOrders()  {
-    let count = 1;
+    let count = 0;
+    let fcount = 0;
     this.Contract.methods
       .ListAllFishes()
       .call({from: this.account})
@@ -61,7 +64,8 @@ export class MarketComponent implements OnInit{
             .call({from: this.account})
             .then((fish: any) => {
               if ( fish._onOrder) {
-                this.tempf[count - 1] = this._fishService.listFish(count, fishAddress, fish);
+                this.tempf[fcount] = this._fishService.listFish(count, fishAddress, fish);
+                fcount++;
               }
               count++;
             }

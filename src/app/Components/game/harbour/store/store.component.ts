@@ -45,18 +45,14 @@ export class StoreComponent implements  OnInit {
           .GetFishDetails(item)
           .call({from: this.account})
           .then((fish: any) => {
-            console.log(fish._onOrder);
-            
             if ( !fish._onOrder) {
               this.tempf[fcount] =  this._fishService.listFish(count, item, fish);
-              fcount++
+              fcount++;
             }
             count++;
           }
           );
         })
-        console.log(count);
-        
         this._appService.updateFishStoreList(this.tempf);
       }
       );
@@ -106,9 +102,8 @@ export class StoreComponent implements  OnInit {
       gas: 3000000
     })
     .then(success => {
-      if (success) {
-        console.log(success);
-
+      if (success.status) {
+        alert('Order Placed SuccessFully')
       }
     } );
   }

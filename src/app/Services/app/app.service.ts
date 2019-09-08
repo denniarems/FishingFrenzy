@@ -26,8 +26,6 @@ export class AppService {
     this.buyOrderList.next(data);
   }
   updateMyOrderList(data: any) {
-    console.log(data);
-    
     this.myOrderList.next(data);
   }
   updateAccount(data: any) {
