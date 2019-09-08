@@ -3,7 +3,7 @@
     <mat-tab label="Fish Store">
       <div class="allfish">
         <mat-card *ngFor="let fish of fishes" class="example-card">
-          <mat-card-header> </mat-card-header>
+          <div  class="fish">
           <img
             *ngIf="fish.rarity == 1"
             mat-card-image
@@ -43,12 +43,13 @@
                   <p>Price : {{ fish.price }}</p>
                 </mat-grid-tile>
                 <mat-grid-tile>
-                  <button mat-raised-button color="primary">Sell</button>
-                  <button mat-raised-button color="primary">Recharge</button>
+                  <button mat-raised-button (click)="sellFish(fish)" color="primary">Sell</button>
+                  <button mat-raised-button (click)="recharge(fish)" color="primary">Recharge</button>
                 </mat-grid-tile>
               </mat-grid-list>
             </div>
           </mat-card-content>
+        </div>
         </mat-card>
       </div>
     </mat-tab>

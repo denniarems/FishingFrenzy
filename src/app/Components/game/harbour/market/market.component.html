@@ -2,7 +2,7 @@
   <div class="market">
     <mat-tab label="Buy Orders">
       <div class="allfish">
-        <mat-card *ngFor="let fish of fishes" class="example-card">
+        <mat-card *ngFor="let fish of BuyOrderFishes" class="example-card">
           <mat-card-header> </mat-card-header>
           <img
             *ngIf="fish.rarity == 1"
@@ -43,7 +43,7 @@
                   <p>Price : {{ fish.price }}</p>
                 </mat-grid-tile>
                 <mat-grid-tile>
-                  <button mat-raised-button color="primary">Buy Now</button>
+                  <button mat-raised-button (click)="buyFish(fish)" color="primary">Buy Now</button>
                 </mat-grid-tile>
               </mat-grid-list>
             </div>
@@ -54,7 +54,7 @@
 
     <mat-tab label="Cancel Orders">
       <div class="allfish">
-        <mat-card *ngFor="let fish of fishes" class="example-card">
+        <mat-card *ngFor="let fish of MyOrderFishes" class="example-card">
           <mat-card-header> </mat-card-header>
           <img
             *ngIf="fish.rarity == 1"
@@ -95,7 +95,7 @@
                   <p>Price : {{ fish.price }}</p>
                 </mat-grid-tile>
                 <mat-grid-tile>
-                  <button mat-raised-button color="primary">Cancel</button>
+                  <button mat-raised-button (click)="cancelOrder(fish)" color="primary">Cancel</button>
                 </mat-grid-tile>
               </mat-grid-list>
             </div>

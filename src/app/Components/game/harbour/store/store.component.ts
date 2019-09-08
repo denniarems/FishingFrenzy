@@ -2,9 +2,6 @@ import { FishService } from './../../../../Services/fish/fish.service';
 import { AppService } from './../../../../Services/app/app.service';
 import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { FishModel } from 'src/app/Models/fish.model';
-declare let window: any;
-declare let web3: any;
-declare let require: any;
 @Component({
   selector: 'app-store',
   templateUrl: './store.component.html',
@@ -17,7 +14,7 @@ export class StoreComponent implements  OnInit {
   rod: any = [];
   tempf: FishModel[] = [];
   account: any;
-  constructor( 
+  constructor(
     private _appService: AppService,
     private _fishService: FishService) {
   }
@@ -37,24 +34,35 @@ export class StoreComponent implements  OnInit {
   }
 
   listingFishData = () => {
-    let count = 1;
+    let count = 0;
+    let fcount = 0;
     this.Contract.methods
       .ListAllFishes()
       .call({from: this.account})
-      .then(address => {
-        address.forEach(fishAddress => {
-          this.Contract.methods
-            .GetFishDetails(fishAddress)
-            .call({from: this.account})
-            .then(fish => {
-              this.tempf[count - 1] = this._fishService.listFish(count, fishAddress, fish);
-              count++;
+      .then((address: []) =>{
+        address.forEach(async (item: any) => {
+          await this.Contract.methods
+          .GetFishDetails(item)
+          .call({from: this.account})
+          .then((fish: any) => {
+            console.log(fish._onOrder);
+            
+            if ( !fish._onOrder) {
+              this.tempf[fcount] =  this._fishService.listFish(count, item, fish);
+              fcount++
             }
-            );
-        });
+            count++;
+          }
+          );
+        })
+        console.log(count);
+        
         this._appService.updateFishStoreList(this.tempf);
-      });
+      }
+      );
   }
+
+
   listingRodDta = () => {
     this.Contract.methods
     .GetRodDetails()
@@ -85,5 +93,23 @@ export class StoreComponent implements  OnInit {
           this.listingRodDta();
         });
 
+  }
+  recharge = (fish: FishModel) => {
+    alert('Coming Soon.. WIll be Available on Next Update....');
+  }
+  sellFish = (fish: FishModel) => {
+    console.log(fish);
+    this.Contract.methods
+    .SellFish(fish.fish, fish.id)
+    .send({
+      from: this.account,
+      gas: 3000000
+    })
+    .then(success => {
+      if (success) {
+        console.log(success);
+
+      }
+    } );
   }
 }

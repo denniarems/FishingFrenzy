@@ -18,7 +18,8 @@ export class PlayGroundComponent implements OnInit {
     fish: 'Coming Soon',
     rarity: 'soon',
     weight: 0,
-    price: 0
+    price: 0,
+    onOrder: false
   };
   constructor( 
     private _appService: AppService,

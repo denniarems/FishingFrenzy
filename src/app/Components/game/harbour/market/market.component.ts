@@ -1,8 +1,10 @@
+
 import { Component, OnInit } from '@angular/core';
 
 import { AppService } from 'src/app/Services/app/app.service';
 import { FishModel } from 'src/app/Models/fish.model';
 import { FishService } from 'src/app/Services/fish/fish.service';
+import { OrderModel } from 'src/app/Models/order.model';
 
 
 
@@ -13,10 +15,10 @@ import { FishService } from 'src/app/Services/fish/fish.service';
 })
 export class MarketComponent implements OnInit{
   Contract: any;
-  fishes: FishModel[] = [];
-  rod: any = [];
-  tempf: FishModel[] = [];
   account: any;
+  BuyOrderFishes: OrderModel[] = [];
+  MyOrderFishes: FishModel[] = [];
+  tempf: FishModel[] = [];
   constructor( 
     private _appService: AppService,
     private _fishService: FishService) {
@@ -28,15 +30,26 @@ export class MarketComponent implements OnInit{
     this._appService.currentAccount.subscribe(accs => {
       this.account = accs;
     });
-    this._appService.currentFishStoreList.subscribe(fish => {
-      this.fishes = [];
-      this.fishes = fish;
+    this._appService.currentBuyOrderList.subscribe(fish => {
+      this.BuyOrderFishes = [];
+      this.BuyOrderFishes = fish;
     });
-    this.listingFishData();
-    this.listingRodDta();
+    this._appService.currentMyOrderList.subscribe(fish => {
+      this.MyOrderFishes = [];
+      this.MyOrderFishes = fish;
+    });
+    this.listingBuyOrders();
   }
 
-  listingFishData = () => {
+  listingBuyOrders()  {
+    this.Contract.methods
+    .ListMarketOrders()
+    .call({from: this.account})
+    .then(Orders => {
+      this.BuyOrderFishes =  this._fishService.listOrders(Orders,this.listingMyOrders());
+      });
+  }
+  listingMyOrders()  {
     let count = 1;
     this.Contract.methods
       .ListAllFishes()
@@ -46,44 +59,22 @@ export class MarketComponent implements OnInit{
           this.Contract.methods
             .GetFishDetails(fishAddress)
             .call({from: this.account})
-            .then(fish => {
-              this.tempf[count - 1] = this._fishService.listFish(count, fishAddress, fish);
+            .then((fish: any) => {
+              if ( fish._onOrder) {
+                this.tempf[count - 1] = this._fishService.listFish(count, fishAddress, fish);
+              }
               count++;
             }
             );
         });
-        this._appService.updateFishStoreList(this.tempf);
+        this._appService.updateMyOrderList(this.tempf);
       });
+    return this.tempf;
   }
-  listingRodDta = () => {
-    this.Contract.methods
-    .GetRodDetails()
-   .call({from: this.account})
-   .then((rodData: any) => {
-    this.rod = rodData;
-  });
+  cancelOrder = (fish: FishModel) => {
+    alert('Cancel Order Coming Soon!!!!!');
   }
-  firstFishRod = () => {
-      this.Contract.methods
-        .FirstUserInitialRod()
-        .send({
-          from: this.account,
-          gas: 3000000
-        })
-        .then(() => {
-          this.listingRodDta();
-        });
-  }
-  upgradeFishrod() {
-      this.Contract.methods
-        .UpgradeFishRod()
-        .send({
-          from: this.account,
-          gas: 3000000
-        })
-        .then(() => {
-          this.listingRodDta();
-        });
-
+  buyFish = (fish: OrderModel) => {
+    alert('Buy Order Coming Soon!!!!!');
   }
 }

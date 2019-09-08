@@ -17,11 +17,11 @@ function IndexOf(address[] memory self, address value) internal pure returns(uin
   }
 
   /** Removes the given value in an array. */
-  function RemoveByValue(address[] memory self, address value) internal pure {
-    uint256 i = IndexOf(self,value);
-    RemoveByIndex(self,i);
+  // function RemoveByValue(address[] memory self, address value) internal pure {
+  //   uint256 i = IndexOf(self,value);
+  //   RemoveByIndex(self,i);
     
-  }
+  // }
 
   /** Removes the value at the given index in an array. */
   // function RemoveByIndex(address[] memory self,uint256 index) internal pure {
