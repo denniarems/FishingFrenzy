@@ -4,5 +4,6 @@ export interface FishModel {
   rarity: string;
   weight: number;
   price: number;
+  onOrder: boolean;
 }
 

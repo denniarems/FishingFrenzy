@@ -15,10 +15,11 @@ export class PlayGroundComponent implements OnInit {
   account: any;
   newFish: FishModel = {
     id: 0,
-    fish: 'Coming Soon',
+    fish: '',
     rarity: 'soon',
     weight: 0,
-    price: 0
+    price: 0,
+    onOrder: false
   };
   constructor( 
     private _appService: AppService,

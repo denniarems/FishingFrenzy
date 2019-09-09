@@ -9,14 +9,24 @@ declare const web3: any;
 })
 export class AppService {
   private fishStoreList = new BehaviorSubject([]);
+  private buyOrderList = new BehaviorSubject([]);
+  private myOrderList = new BehaviorSubject([]);
   private account = new BehaviorSubject([]);
 
   currentFishStoreList = this.fishStoreList.asObservable();
+  currentBuyOrderList = this.buyOrderList.asObservable();
+  currentMyOrderList = this.myOrderList.asObservable();
   currentAccount = this.account.asObservable();
 
 
   updateFishStoreList(data: any) {
     this.fishStoreList.next(data);
+  }
+  updateBuyOrderList(data: any) {
+    this.buyOrderList.next(data);
+  }
+  updateMyOrderList(data: any) {
+    this.myOrderList.next(data);
   }
   updateAccount(data: any) {
     this.account.next(data);
