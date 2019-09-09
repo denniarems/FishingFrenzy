@@ -6,10 +6,10 @@
  * web3 : to connect the local blockchain.
  * json : output from the compilation of smart contract BaseContracts.
  */
-const json=artifacts.require("FrenzyFish");
-let accounts,fishfrenzy,management,ff;
-const interface=json['abi'];
-const bytecode=json['bytecode'];
+const json = artifacts.require("FrenzyFish");
+let accounts, fishfrenzy, management, ff;
+const interface = json['abi'];
+const bytecode = json['bytecode'];
 const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 
 // The bytecode and the interface (abi) are only considered from the output json file.
@@ -50,33 +50,39 @@ const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
  * first parameter is name to the test.
  * second parameter is function which holds the body of the test.
  */
-beforeEach(async() => {
-    
+beforeEach(async () => {
 
-accounts=await web3.eth.getAccounts();
-manage=accounts[0];
-fishfrenzy=await web3.eth.Contract(interface)
-    .deploy({data:bytecode})
-    .send({from:manage,gas:'40000'});
+
+  accounts = await web3.eth.getAccounts();
+  manage = accounts[0];
+  fishfrenzy = await web3.eth.Contract(interface)
+    .deploy({ data: bytecode })
+    .send({ from: manage, gas: '40000' });
 });
+// Test cases.
+describe('FrenzyFish', () => {
 
-contract('FrenzyFish',()=>{
-    it ('deploys a contract',()=>{
-        const fishaddress=await ff.option.address;
-        assert.ok(fishaddress, "[test fail]");
+    // Check if contract has been deployed and contract address generated. If false, test failed.
+  it('deploys a contract', async () => {
+    try {
+      const fishaddress = await ff.option.address;
+      assert.ok(fishaddress, "[test fail]");
 
-    });
-    it('fishing fish ',async()=>{
-    
+    } catch (err) {
+      assert(err);
+    }
+  });
+  it('fishing fish ', async () => {
 
-        try{  
-          await sms.methods.Fishing(msg.sender,UsersRod[msg.sender].Level)
-        .send({from:accounts[0],gas:4000000});
-       
-      };
-    
 
-});
+    try {
+      await sms.methods.Fishing(msg.sender, UsersRod[msg.sender].Level)
+        .send({ from: accounts[0], gas: 4000000 });
+
+    };
+
+
+  });
 
 
 
