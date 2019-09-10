@@ -103,7 +103,7 @@ export class StoreComponent implements  OnInit {
     })
     .then(success => {
       if (success.status) {
-        alert('Order Placed SuccessFully')
+        alert('Sell Order Placed SuccessFully')
       }
     } );
   }
