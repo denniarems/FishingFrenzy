@@ -26,7 +26,7 @@ contract FishRod {
     }
     return false;
     }
-      //update fishrod property
+      //Upgrade fishrod property
     function UpgradeFishRod() public{
         assert(UsersRod[msg.sender].Level!=0);
         uint256 Price = UsersRod[msg.sender].NextPrice;
