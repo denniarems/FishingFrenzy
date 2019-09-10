@@ -3,10 +3,12 @@ import './Fish.sol';
 import './FishRod.sol';
 import './Market.sol';
 contract FrenzyFish is FishRod,Market{
-
+  // Constructor
     constructor () public {
     }
     // address[] public Fishes;
+    
+ // Function to Fishing a new Fish into Structure "FishModel" with reference to msg.sender .
     function Fishing() public{
         address newfish = address(new Fish(msg.sender,UsersRod[msg.sender].Level));
         Fishes[msg.sender].push(newfish);
