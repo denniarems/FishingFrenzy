@@ -1,8 +1,8 @@
+
 import { Injectable } from '@angular/core';
 import { FishModel } from 'src/app/Models/fish.model';
 import { OrderModel } from 'src/app/Models/order.model';
 import { AppService } from '../app/app.service';
-import { async } from '@angular/core/testing';
 
 @Injectable({
   providedIn: 'root'
@@ -47,18 +47,13 @@ export class FishService {
       };
     }
 
-    listOrders(Orders: { [s: string]: {}; } | ArrayLike<{}>, MyOrder: FishModel[]): OrderModel[] {
+    listOrders(Orders: { [s: string]: {}; } | ArrayLike<{}>): OrderModel[] {
       const Order: OrderModel[] = [];
       const fish: any = Object.entries(Orders)[0][1];
       const seller = Object.entries(Orders)[1][1];
       const ownerFishPosition = Object.entries(Orders)[2][1];
       const isFilled = Object.entries(Orders)[3][1];
-      const counta = MyOrder.length;
-      console.log(counta);
-        // Can't Find MyOrder.length
       for (let i = 0; i <= fish.length; i++) {
-        if (MyOrder.length === 0) {
-          console.log('1');
           if (!(fish[i] == 0x0000000000000000000000000000000000000000 || !fish[i])) {
             this.Contract.methods
             .GetFishDetails(fish[i])
@@ -66,20 +61,7 @@ export class FishService {
             .then((fishDetails: any)  => Order
             .push(this.listOrder(i, fish[i], fishDetails, seller[i], ownerFishPosition[i], isFilled[i])));
           }
-        } else {
-          console.log('2');
-          MyOrder.forEach(myfish => {
-            if (!(fish[i] == 0x0000000000000000000000000000000000000000 || !fish[i])) {
-            if (!(myfish.fish == fish[i])) {
-              this.Contract.methods
-              .GetFishDetails(fish[i])
-              .call()
-              .then((fishDetails: any)  => Order
-              .push(this.listOrder(i, fish[i], fishDetails, seller[i], ownerFishPosition[i], isFilled[i])));
-            }
-          }
-        })}
-      }
+        }
       return Order;
     }
 }
