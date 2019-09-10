@@ -1,10 +1,15 @@
 pragma solidity ^0.5.0;
 
 import './SafeMath.sol';
-
+/**
+  @title Public
+  @notice Public functions are part of the contract interface and can be either called internally or via messages.
+  @title View
+  @notice View Function can wrap complex operations, or just provide a way to expose internal component in a safe way.
+ */
 contract Fish  {
     using SafeMath for uint256;
-
+  // Structure FishModel.
     struct FishModel  {
         uint256 Rarity;
         uint256 Weight;
@@ -15,15 +20,16 @@ contract Fish  {
     }
     FishModel public ThisFish;
     // mapping (address=>FishModel) ThisFish;
+    //build new fish 
     constructor(address _owner,uint256 _fishRodLevel) public   {
         ThisFish.Owner = _owner;
-        ThisFish.Rarity = Rarity();
-        ThisFish.Weight = Weight(_fishRodLevel);
-        ThisFish.Price = Price(ThisFish.Weight,ThisFish.Rarity);
+        ThisFish.Rarity = Rarity();//rarity of fish is selected by block gaslimit,block difficuty and apply this into math function "mod"
+        ThisFish.Weight = Weight(_fishRodLevel);//weight is selected by the rod level and using the math fuction
+        ThisFish.Price = Price(ThisFish.Weight,ThisFish.Rarity);//price is define by the weght and rariy
         // ThisFish.Position = 0;
         ThisFish.OnOrder = false;
     }
-
+//rarity is selected 
     function Rarity() public view returns(uint256)  {
         if ((block.gaslimit+block.difficulty+now).mod(100)==0){
             return 3;

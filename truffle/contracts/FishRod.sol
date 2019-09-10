@@ -3,6 +3,7 @@ pragma solidity ^0.5.0;
 
 import './SafeMath.sol';
 // import './SafeMath.sol';
+ // Structure FishRod.
 contract FishRod {
     using SafeMath for uint256;
     struct  Rod{
@@ -11,8 +12,10 @@ contract FishRod {
         uint256 CurrentPrice;
         uint256 NextPrice;
     }
+    // Mapping is done into structure "Rod" with "UsersRod" as mapping key.
     mapping (address=>Rod) public UsersRod;
 
+    //Asign InitialRod property
     function FirstUserInitialRod() public returns(bool){
         if(UsersRod[msg.sender].Level == 0){
         UsersRod[msg.sender].Level = 1;
@@ -23,6 +26,7 @@ contract FishRod {
     }
     return false;
     }
+      //Upgrade fishrod property
     function UpgradeFishRod() public{
         assert(UsersRod[msg.sender].Level!=0);
         uint256 Price = UsersRod[msg.sender].NextPrice;
