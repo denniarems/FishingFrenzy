@@ -1,10 +1,15 @@
 pragma solidity ^0.5.0;
 
 import './SafeMath.sol';
-
+/**
+  @title Public
+  @notice Public functions are part of the contract interface and can be either called internally or via messages.
+  @title View
+  @notice View Function can wrap complex operations, or just provide a way to expose internal component in a safe way.
+ */
 contract Fish  {
     using SafeMath for uint256;
-
+  // Structure FishModel.
     struct FishModel  {
         uint256 Rarity;
         uint256 Weight;
