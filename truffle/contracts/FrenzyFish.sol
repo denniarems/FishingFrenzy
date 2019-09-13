@@ -6,12 +6,13 @@ contract FrenzyFish is FishRod,Market{
   // Constructor
     constructor () public {
     }
-    // address[] public Fishes;
 
  // Function to Fishing a new Fish into Structure "FishModel" with reference to msg.sender .
-    function Fishing() public{
+    function Fishing() public returns(address){
+        require(UsersRod[msg.sender].Level != 0,"Rod Must be Needed");
         address newfish = address(new Fish(msg.sender,UsersRod[msg.sender].Level));
         Fishes[msg.sender].push(newfish);
+        return newfish;
     }
     //function to list all the fish of an account
      function ListAllFishes() public view returns(address[] memory) {
@@ -24,12 +25,7 @@ contract FrenzyFish is FishRod,Market{
 
 
     // function RechargeUsingFish(address _Fish,uint256 _position) public{
-    //     require(FishOwner[_Fish] == msg.sender,"User is not Fish owner");
-    //     require(_position >= 0 && _position < Players[msg.sender].Towns.length,"Invalid Array Index");
-    //     require(Players[msg.sender].Towns[_position] == _Fish,"Invalid Town Index");
-    //     Fish(_Fish).DestroyFish();
-    //     FishOwner[_Fish] = address(0);
-    //     Players[msg.sender].Towns[_position] = address(0);
+
     // }
 
 }
