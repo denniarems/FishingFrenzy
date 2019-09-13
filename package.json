@@ -28,6 +28,7 @@
     "rxjs": "~6.5.2",
     "solc": "^0.5.11",
     "truffle-contract": "^4.0.31",
+    "truffle-hdwallet-provider": "^1.0.17",
     "tslib": "^1.10.0",
     "typedarray-to-buffer": "^3.1.5",
     "web3": "^1.2.1",
