@@ -111,17 +111,17 @@ truffle test ./test/FishingFrenzy.js
 ```
 We Don't Stop From here....
 ## Upcoming Features
-- Ether Payment Support 
-- ERC20 Token Support
-- Fish Recharging
-- Admin Panel
-- Migrating To ERC721 Fish Tokens from Fish Contracts
-- Fish Biding Support
-- implementing New featured Fishrods
-- Aquarium for Fish breeding 
-- New Web Ui with Rich Grphic Support
-- Introducing Mobile App  :D
+- Ether Payment Support.
+- ERC20 Token Support.
+- Fish Recharging.
+- Admin Panel.
+- Migrating To ERC721 Fish Tokens from Fish Contracts.
+- Fish Biding Support.
+- implementing New featured Fishrods.
+- Aquarium for Fish breeding. 
+- New Web Ui with Rich Graphic Support.
+- Introducing Mobile App. 
 - Original Fish API.
 - Introducing Legendery Fish which Have Uniqe DNA. 
-- VIP Club (increasing the chance of Epic Fishes) 
+- VIP Club. (increasing the chance of Epic Fishes) 
 - And So on ... Stay Tuned.........
