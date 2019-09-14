@@ -1,10 +1,81 @@
 # FishingFrenzy
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+FishingFrenzy is blockchain based CryptoCollectble game, we use ethereum network for deploying codes (smart contracts).
 
-## Development server
+## Requirements
 
-steps to run dapp in dev mode
+- Ubuntu
+- Build-essential packages
+- [Node.js](https://nodejs.org/) Version 10.15.3
+- Angular 8
+- [Truffle](https://www.trufflesuite.com/docs/truffle/overview)
+- [Geth](https://www.trufflesuite.com/docs/truffle/overview)
+- MetaMask Enabled Browser
 
-sudo npm i @angular/cli
+## Setting Up:
+
+**Step 1:** Download the repostory using the command:
+
+```
+ git clone "https://gitlab.com/ced_b3_projects/ced-b3-g06.git"
+ cd ced-b3-g06
+```
+
+**Step 2:** Install the dependecies using the command:
+
+```
+ npm Install
+```
+**Step 3:** Use the following command to runing Smart Contract:
+**Run On Private Network**
+ Use the following command to run the Geth(Proof Of Authority (Clique)):
+ nano node/genesis.json
+ Add needed alloc address and prefund
+ 
+```
+cd node
+chmod +x ./genesisInit.sh
+chmod +x ./geth.sh
+
+./genesisInit.sh
+./geth.sh
+cd ..
+truffle migrate
+```
+**Run On Public Network**
+ Use the following Steps For Run Smart Contract In Ropsten (Proof Of Work) and Rinkeby (Proof Of Authority) :
+nano truffle-config.js
+change infuraKey
+nano ./secret
+add your mnemonics words
+nano src/app/Services/app/app.service.ts
+go to line 11
+change networkid to 3 for Ropsten and 4 for Rinkeby
+
+truffle deployment for Ropsten Network
+```
+truffle migrate --network ropsten
+```
+truffle deployment for Rinkeby Network
+```
+truffle migrate --network rinkeby
+```
+
+**Step 4:** Running Angular App
+ Open New Terminal
+```
 ng s -o
+```
+it will Automaticaly Open http://localhost/4200 in browser
+Connet with Metamask 
+Enjoy!!!!!!
+
+check video demonstration [here](/willcomesoon....)
+
+## Optional Settings:
+
+to run test case
+New Terminal
+```
+truffle test ./test/FishingFrenzy.js
+```

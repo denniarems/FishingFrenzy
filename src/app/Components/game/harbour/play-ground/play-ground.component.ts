@@ -34,6 +34,7 @@ export class PlayGroundComponent implements OnInit {
       this.listNewFish();
     });
   }
+  //Code For Fishing
   play = () => {
       this.Contract.methods
         .Fishing()
@@ -45,6 +46,7 @@ export class PlayGroundComponent implements OnInit {
           this.listNewFish();
         });
   }
+  //Display Last ArrayFish
   listNewFish = () => {
     this.Contract.methods
     .ListAllFishes()

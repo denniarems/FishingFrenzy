@@ -16,3 +16,23 @@
 22:23:32.071531 version@stat F·[1] S·1KiB[1KiB] Sc·[0.25]
 22:23:32.178670 db@janitor F·3 G·0
 22:23:32.178715 db@open done T·176.130383ms
+=============== Sep 15, 2019 (IST) ===============
+00:42:04.857124 db@close closing
+00:42:04.857248 db@close done T·121.935µs
+=============== Sep 15, 2019 (IST) ===============
+01:16:26.927479 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+01:16:26.927890 version@stat F·[1] S·1KiB[1KiB] Sc·[0.25]
+01:16:26.927930 db@open opening
+01:16:26.928009 journal@recovery F·1
+01:16:26.931072 journal@recovery recovering @3
+01:16:27.084174 memdb@flush created L0@5 N·25014 S·1MiB "\x0e\x1e\xc5..@3\x1c,v25009":"\xfco$..;\x95\xb9,v25038"
+01:16:27.087668 version@stat F·[2] S·1MiB[1MiB] Sc·[0.50]
+01:16:27.186738 db@janitor F·4 G·0
+01:16:27.186786 db@open done T·258.837175ms
+01:16:27.252243 table@compaction L0·2 -> L1·0 S·1MiB Q·25041
+01:16:27.335294 table@build created L1@8 N·16721 S·953KiB "\t\b5..7\x88\xf0,v14":"\xfco$..;\x95\xb9,v25038"
+01:16:27.335384 version@stat F·[0 1] S·953KiB[0B 953KiB] Sc·[0.00 0.01]
+01:16:27.369055 table@compaction committed F-1 S-339KiB Ke·0 D·8317 T·116.742856ms
+01:16:27.369237 table@remove removed @2
+01:16:30.355699 db@close closing
+01:16:30.355801 db@close done T·100.311µs

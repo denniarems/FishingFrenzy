@@ -8,6 +8,7 @@ declare const web3: any;
   providedIn: 'root'
 })
 export class AppService {
+  private networkid = 4002;
   private fishStoreList = new BehaviorSubject([]);
   private buyOrderList = new BehaviorSubject([]);
   private myOrderList = new BehaviorSubject([]);
@@ -32,10 +33,10 @@ export class AppService {
     this.account.next(data);
   }
 
-
+  /** returns Contract. */
   getFrenzyFishContract(){
    const ContractJSON = require('../../../../build/contracts/FrenzyFish.json');
-   const contractsAddress = ContractJSON.networks['4002'].address;
+   const contractsAddress = ContractJSON.networks[this.networkid].address;
    const abi = ContractJSON.abi;
    const Contract = new window.web3.eth.Contract(abi, contractsAddress);
    return Contract;

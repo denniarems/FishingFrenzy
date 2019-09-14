@@ -47,7 +47,7 @@ export class MarketComponent implements OnInit {
       this.listingMyOrders(this.tempf);
       });
     }
-
+//Listing All From OrderList
 listingBuyOrders(order: OrderModel[])  {
    let buyOrder: OrderModel[] = [];
    let index = 0;
@@ -84,8 +84,8 @@ listingBuyOrders(order: OrderModel[])  {
     }
     );
   }
-
-  listingMyOrders(order: OrderModel[])  {
+//Listing All From MYOrderList
+listingMyOrders(order: OrderModel[])  {
    let cancelOrder: OrderModel[] = [];
    let index = 0;
    new Promise((resolve) => {
@@ -119,8 +119,8 @@ listingBuyOrders(order: OrderModel[])  {
     }
     );
   }
-
-  cancelOrder = (fish: OrderModel) => {
+//CancelFish From Order
+cancelOrder = (fish: OrderModel) => {
     console.log(fish);
     console.log(fish.fish, fish.orderid);
     this.Contract.methods
@@ -132,7 +132,9 @@ listingBuyOrders(order: OrderModel[])  {
       console.log(success);
   });
 }
-  buyFish = (fish: OrderModel) => {
+
+//BuyFish From Order
+buyFish = (fish: OrderModel) => {
     console.log(fish);
     this.Contract.methods
     .BuyFish(fish.fish, fish.orderid-1)

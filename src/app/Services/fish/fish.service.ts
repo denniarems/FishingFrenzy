@@ -28,7 +28,7 @@ export class FishService {
       };
     }
 
-
+  /** Builds and returns a Order. */
     listOrder(count: number,
               fish: any,
               fishDetails: { _rarity: string; _weight: number; _price: number; _onOrder: boolean},
@@ -46,7 +46,6 @@ export class FishService {
         isFilled
       };
     }
-
     listOrders(Orders: { [s: string]: {}; } | ArrayLike<{}>): OrderModel[] {
       const Order: OrderModel[] = [];
       const fish: any = Object.entries(Orders)[0][1];

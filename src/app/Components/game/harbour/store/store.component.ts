@@ -32,7 +32,7 @@ export class StoreComponent implements  OnInit {
     this.listingFishData();
     this.listingRodDta();
   }
-
+//Listing FishData
   listingFishData = () => {
     let count = 0;
     let fcount = 0;
@@ -58,7 +58,7 @@ export class StoreComponent implements  OnInit {
       );
   }
 
-
+//Listing FishRod
   listingRodDta = () => {
     this.Contract.methods
     .GetRodDetails()
@@ -67,6 +67,7 @@ export class StoreComponent implements  OnInit {
     this.rod = rodData;
   });
   }
+  //initilise Fish Rod
   firstFishRod = () => {
       this.Contract.methods
         .FirstUserInitialRod()
@@ -78,6 +79,7 @@ export class StoreComponent implements  OnInit {
           this.listingRodDta();
         });
   }
+  //Upgrade Fish Rod
   upgradeFishrod() {
       this.Contract.methods
         .UpgradeFishRod()
@@ -93,6 +95,7 @@ export class StoreComponent implements  OnInit {
   recharge = (fish: FishModel) => {
     alert('Coming Soon.. WIll be Available on Next Update....');
   }
+//Sell A Fish
   sellFish = (fish: FishModel) => {
     console.log(fish);
     this.Contract.methods
