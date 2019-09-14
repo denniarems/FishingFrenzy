@@ -122,6 +122,6 @@ We Don't Stop From here....
 - New Web Ui with Rich Graphic Support.
 - Introducing Mobile App. 
 - Original Fish API.
-- Introducing Legendery Fish which Have Uniqe DNA. 
+- Introducing Legendery and Seasonal Fishes which Have Uniqe DNA. 
 - VIP Club. (increasing the chance of Epic Fishes) 
 - And So on ... Stay Tuned.........
