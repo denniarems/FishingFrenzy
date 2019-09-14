@@ -35,7 +35,7 @@ export class AppService {
 
   getFrenzyFishContract(){
    const ContractJSON = require('../../../../build/contracts/FrenzyFish.json');
-   const contractsAddress = ContractJSON.networks['5777'].address;
+   const contractsAddress = ContractJSON.networks['4002'].address;
    const abi = ContractJSON.abi;
    const Contract = new window.web3.eth.Contract(abi, contractsAddress);
    return Contract;

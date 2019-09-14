@@ -122,9 +122,9 @@ listingBuyOrders(order: OrderModel[])  {
 
   cancelOrder = (fish: OrderModel) => {
     console.log(fish);
-
+    console.log(fish.fish, fish.orderid);
     this.Contract.methods
-    .CancelSellFishOrder(fish.fish, fish.orderid)
+    .CancelSellFishOrder(fish.fish, fish.orderid - 1)
     .send({
       from: this.account,
       gas: 3000000
@@ -135,7 +135,7 @@ listingBuyOrders(order: OrderModel[])  {
   buyFish = (fish: OrderModel) => {
     console.log(fish);
     this.Contract.methods
-    .BuyFish(fish.fish, fish.orderid)
+    .BuyFish(fish.fish, fish.orderid-1)
     .send({
       from: this.account,
       gas: 3000000
