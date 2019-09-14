@@ -34,7 +34,7 @@ export class AppService {
 
 
   getFrenzyFishContract(){
-   const ContractJSON = require('../../../../truffle/build/contracts/FrenzyFish.json');
+   const ContractJSON = require('../../../../build/contracts/FrenzyFish.json');
    const contractsAddress = ContractJSON.networks['5777'].address;
    const abi = ContractJSON.abi;
    const Contract = new window.web3.eth.Contract(abi, contractsAddress);
