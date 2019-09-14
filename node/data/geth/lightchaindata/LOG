@@ -1,8 +1,8 @@
 =============== Sep 14, 2019 (IST) ===============
-13:01:57.347837 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-13:01:57.542971 db@open opening
-13:01:57.543970 version@stat F·[] S·0B[] Sc·[]
-13:01:57.609992 db@janitor F·2 G·0
-13:01:57.610038 db@open done T·67.029707ms
-13:01:57.611165 db@close closing
-13:01:57.611218 db@close done T·51.387µs
+15:48:08.843779 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:48:09.023251 db@open opening
+15:48:09.027063 version@stat F·[] S·0B[] Sc·[]
+15:48:09.214616 db@janitor F·2 G·0
+15:48:09.214651 db@open done T·191.150456ms
+15:48:09.215257 db@close closing
+15:48:09.215319 db@close done T·59.431µs
