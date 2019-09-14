@@ -31,8 +31,14 @@ FishingFrenzy is blockchain based CryptoCollectble game, we use ethereum network
 
 
 **Run On Private Network**
+
+
  Use the following command to run the Geth(Proof Of Authority (Clique)):
+
+
  nano node/genesis.json
+
+ 
  Add needed alloc address and prefund
  
  
