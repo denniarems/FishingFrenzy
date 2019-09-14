@@ -27,10 +27,15 @@ FishingFrenzy is blockchain based CryptoCollectble game, we use ethereum network
  npm Install
 ```
 **Step 3:** Use the following command to runing Smart Contract:
+
+
+
 **Run On Private Network**
  Use the following command to run the Geth(Proof Of Authority (Clique)):
  nano node/genesis.json
  Add needed alloc address and prefund
+ 
+ 
  
 ```
 cd node
@@ -42,14 +47,26 @@ chmod +x ./geth.sh
 cd ..
 truffle migrate
 ```
+
+
+
+
 **Run On Public Network**
- Use the following Steps For Run Smart Contract In Ropsten (Proof Of Work) and Rinkeby (Proof Of Authority) :
+Use the following Steps For Run Smart Contract In Ropsten (Proof Of Work) and Rinkeby (Proof Of Authority) :
+
+
 nano truffle-config.js
+
 change infuraKey
+
 nano ./secret
+
 add your mnemonics words
+
 nano src/app/Services/app/app.service.ts
+
 go to line 11
+
 change networkid to 3 for Ropsten and 4 for Rinkeby
 
 truffle deployment for Ropsten Network
@@ -61,16 +78,23 @@ truffle deployment for Rinkeby Network
 truffle migrate --network rinkeby
 ```
 
+
+
 **Step 4:** Running Angular App
- Open New Terminal
+Open New Terminal
 ```
 ng s -o
 ```
+
+
 it will Automaticaly Open http://localhost/4200 in browser
 Connet with Metamask 
 Enjoy!!!!!!
 
 check video demonstration [here](/willcomesoon....)
+
+
+
 
 ## Optional Settings:
 
