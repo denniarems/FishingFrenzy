@@ -3,7 +3,7 @@
 
 
 
-[Video Demo]()
+[Video Demo](https://youtu.be/SnMnXaY3r0M)
 
 
 
@@ -106,7 +106,7 @@ it will Automaticaly Open http://localhost/4200 in browser
 Connet with Metamask 
 Enjoy!!!!!!
 
-check video demonstration [here](/willcomesoon....)
+check video demonstration [here](https://youtu.be/SnMnXaY3r0M)
 
 
 
