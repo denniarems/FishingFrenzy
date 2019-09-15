@@ -57,10 +57,8 @@ listingBuyOrders(order: OrderModel[])  {
       .call({from: this.account})
       .then((( fishes: any) => {
       if (fishes.length == 0) {
-        console.log('1');
         resolve(order);
       } else {
-        console.log('2');
         fishes.forEach((fishAddress: any) => {
         for (const orderfish of order) {
           this.Contract.methods
@@ -127,7 +125,7 @@ cancelOrder = (fish: OrderModel) => {
     .CancelSellFishOrder(fish.fish, fish.orderid - 1)
     .send({
       from: this.account,
-      gas: 3000000
+      gas: 5000000
     }).then((success: any) => {
       console.log(success);
   });
@@ -140,7 +138,7 @@ buyFish = (fish: OrderModel) => {
     .BuyFish(fish.fish, fish.orderid-1)
     .send({
       from: this.account,
-      gas: 3000000
+      gas: 5000000
     }).then((success: any) => {
       console.log(success);
   });

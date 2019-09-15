@@ -40,7 +40,7 @@ export class PlayGroundComponent implements OnInit {
         .Fishing()
         .send({
           from: this.account,
-          gas: 3000000
+          gas: 5000000
         })
         .then(() => {
           this.listNewFish();

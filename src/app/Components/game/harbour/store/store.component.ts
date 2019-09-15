@@ -73,7 +73,7 @@ export class StoreComponent implements  OnInit {
         .FirstUserInitialRod()
         .send({
           from: this.account,
-          gas: 3000000
+          gas: 5000000
         })
         .then(() => {
           this.listingRodDta();
@@ -85,7 +85,7 @@ export class StoreComponent implements  OnInit {
         .UpgradeFishRod()
         .send({
           from: this.account,
-          gas: 3000000
+          gas: 5000000
         })
         .then(() => {
           this.listingRodDta();

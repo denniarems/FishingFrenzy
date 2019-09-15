@@ -40,7 +40,7 @@ FishingFrenzy is blockchain based CryptoCollectble game, we use ethereum network
 
  
  Add needed alloc address and prefund
- 
+ NOte: Don't Change First Alloc Address
  
  
 ```
@@ -109,19 +109,27 @@ New Terminal
 ```
 truffle test ./test/FishingFrenzy.js
 ```
+
+
+Depolyed Contract of Ropsten Network: 0x9ae312022f9ec4b706d79b2AFcadf749f2E0EeD7
+[Ropsten Live Link](https://fishingfrenzy-rinkeby.netlify.com/)
+Depolyed Contract of Rinkeby Network: 0xf65d21bEe00e431bFA109dDa97c0B56Fd32e3d13
+[Rinkeby Live Link](https://fishingfrenzy-ropsten.netlify.com/)
 We Don't Stop From here....
 ## Upcoming Features
+- Implementing Docker.
 - Ether Payment Support.
 - ERC20 Token Support.
 - Fish Recharging.
 - Admin Panel.
 - Migrating To ERC721 Fish Tokens from Fish Contracts.
 - Fish Biding Support.
+- Fish Battle Arena.
 - implementing New featured Fishrods.
 - Aquarium for Fish breeding. 
 - New Web Ui with Rich Graphic Support.
 - Introducing Mobile App. 
 - Original Fish API.
-- Introducing Legendery and Seasonal Fishes which Have Uniqe DNA. 
+- Introducing Legendary and Seasonal Fishes which Have Unique DNA. 
 - VIP Club. (increasing the chance of Epic Fishes) 
 - And So on ... Stay Tuned.........
