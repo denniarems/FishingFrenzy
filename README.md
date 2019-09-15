@@ -112,10 +112,24 @@ truffle test ./test/FishingFrenzy.js
 
 
 Depolyed Contract of Ropsten Network: 0x9ae312022f9ec4b706d79b2AFcadf749f2E0EeD7
+
+
 [Ropsten Live Link](https://fishingfrenzy-rinkeby.netlify.com/)
+
+
+
 Depolyed Contract of Rinkeby Network: 0xf65d21bEe00e431bFA109dDa97c0B56Fd32e3d13
+
+
+
 [Rinkeby Live Link](https://fishingfrenzy-ropsten.netlify.com/)
+
+
+
 We Don't Stop From here....
+
+
+
 ## Upcoming Features
 - Implementing Docker.
 - Ether Payment Support.
