@@ -1,6 +1,13 @@
 # FishingFrenzy 
 [Live Link](https://fishingfrenzy-rinkeby.netlify.com/)
+
+
+
 [Video Demo]()
+
+
+
+
 FishingFrenzy is a multiplayer game, a decentralized application based on smart contracts running in Ethereum blockchain.
 Players can collecting, fighting and growing crypto fish tokens to dominate the “decentralized FrenzyVerse”. Each Fish has a unique name, a unique image and unique characteristics as a ERC-721 token stored in the ethereum network that can be sold or transferred just like any other cryptocurrency.
 
