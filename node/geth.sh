@@ -1,1 +1,0 @@
-geth --identity "miner" --networkid 4002 --datadir data --nodiscover --mine --rpc --rpcport "8545" --port "8191" --unlock 0 --password password.txt --ipcpath "~/.ethereum/geth.ipc" --rpccorsdomain "*" --rpcapi "db,eth,net,web3,personal" --allow-insecure-unlock
