@@ -8,7 +8,8 @@ declare const web3: any;
   providedIn: "root"
 })
 export class AppService {
-  private networkid = 8995;
+  private networkid = 5777;
+  // private networkid = 8995;
   private fishStoreList = new BehaviorSubject([]);
   private buyOrderList = new BehaviorSubject([]);
   private myOrderList = new BehaviorSubject([]);
